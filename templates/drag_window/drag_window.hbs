@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="https://file.garden/aTNlS0deYkPxCXcx/css/drag_window.css">
 
 <style>
-.customWindowSettings {
---button-1-color: lime;
---button-2-color: orange;
---close-button-color: red;
---position-x: 20vw;
---position-y: 30vh;
---title-bg-color: black;
---title-color: white;
+.win{{window_class}} {
+--button-1-color: {{color1}};
+--button-2-color: {{color2}};
+--close-button-color: {{color3}};
+--position-x: {{x}}vw;
+--position-y: {{y}}rem;
+--title-bg-color: {{title-bg}};
+--title-color: {{title-color}};
 --drag-indicator-style: 2px dotted white;
---initial-width: 500px;
---initial-height: 80px;
+--initial-width: {{w}}px;
+--initial-height: {{h}}px;
 scrollbar-color: red black; /* bar color followed by background color */
 }
 </style>
@@ -19,12 +19,12 @@ scrollbar-color: red black; /* bar color followed by background color */
 <div class="windowReopen">
 <!-- Replace me with whatever you want your reopen window button to look like -->
 <div style="width: fit-content; padding: 0px 5px; border-radius: 5px; background: #1f0f1f;">
-Reopen Closed Window
+{{reopen_text}}
 </div>
 <!-- End of replace me -->
 </div>
 <!-- Begin Window | IMPORTANT, DO NOT MOVE THIS.  It !!MUST!! come directly after the open button for the open button to work -->
-<table class="dragContainer customWindowSettings"> <!-- add a custom class to define settings per window -->
+<table class="dragContainer win{{window_class}}"> <!-- add a custom class to define settings per window -->
 <tr><td><div class="dragHandle"></div></td><td></td></tr>
 <tr><td></td><td><details class="dragWindow" {{#if open}}open{{/if}}> <!-- Remove the 'open' if you want it to start minimized -->
 <!-- Your window here -->
@@ -40,11 +40,7 @@ Kayla™ Window System Demo
 
 <!-- Your window contents here (full markdown support) replace what is here.-->
 
-<div>
-Hello, this is my carrion drag window demo.
-drag from the top left, close in the top right!
-minimize by clicking anywhere else on the title.
-</div>
+replace me with your window contents on carrion! editing window content is not supported on the template site.
 
 <!-- End of your window -->
 </div></details></td></tr></table>
