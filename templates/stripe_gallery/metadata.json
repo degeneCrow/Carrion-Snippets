@@ -1,0 +1,53 @@
+{
+  "template": "templates/stripe_gallery/stripe_gallery.hbs",
+  "options": {
+    "size": { 
+      "value": 400, 
+      "type": "number", 
+      "label": "Image Size"
+    },
+
+    "images": { 
+      "type": "list",
+      "label": "Images", 
+      "items": [
+        {
+          "src": {
+            "type": "text",
+            "value": "https://file.garden/aTNlS0deYkPxCXcx/profile/st1_cmp.webp"
+          },
+          "offset": {
+            "type": "number",
+            "value": "50",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "src": {
+            "type": "text",
+            "value": "https://file.garden/aTNlS0deYkPxCXcx/profile/st2_cmp.webp"
+          },
+          "offset": {
+            "type": "number",
+            "value": "20",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "src": {
+            "type": "text",
+            "value": "https://file.garden/aTNlS0deYkPxCXcx/profile/avali_comic_cmp.webp"
+          },
+          "offset": {
+            "type": "number",
+            "value": "20",
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]
+    }
+  }
+}

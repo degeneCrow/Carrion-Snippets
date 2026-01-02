@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://file.garden/aTNlS0deYkPxCXcx/css/stripe_gallery.css">
+<link rel="stylesheet" href="https://file.garden/aTNlS0deYkPxCXcx/css/utility.css">
+
+
+<style>
+.stripeGallery {
+--gallerySize: 400px; /* Adjust to make your gallery bigger or smaller */
+}
+</style>
+
+
+<div class="stripeGallery fullDescW">
+{{#each images}}
+<img style="object-position: {{offset}}" src="{{src}}"> 
+{{/each}}
+</div>

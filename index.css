@@ -1,0 +1,4 @@
+#template-list-container {
+  gap: 5px;
+  display: flex;
+}

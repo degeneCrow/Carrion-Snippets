@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Stripe Gallery",
+    "description": "Horizontal scrolling gallery for any number of images\nNote: List editing currently not supported, so this template doesn't exactly work properly.",
+    "metadata": "templates/stripe_gallery/metadata.json",
+    "author": "Kayla",
+    "homepage": "https://carrion.chat/character/Kayla"
+  },
+  {
+    "name": "Simple Profile Background",
+    "description": "A simple, easily configurable, auto-updating background image for your profile",
+    "metadata": "templates/profile_background/metadata.json",
+    "author": "Kayla",
+    "homepage": "https://carrion.chat/character/Kayla"
+  }
+]

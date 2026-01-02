@@ -1,0 +1,13 @@
+{
+  "template": "templates/profile_background/background.hbs",
+  "options": {
+    "color": {  
+      "type": "color", 
+      "label": "Fallback color"
+    },
+    "src": {  
+      "type": "text", 
+      "label": "Image URL"
+    }
+  }
+}
