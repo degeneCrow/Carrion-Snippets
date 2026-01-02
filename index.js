@@ -2,6 +2,23 @@ let currentTemplate
 let manifest = []
 let cardTemplate
 
+DOMPurify.addAllowedTags(['link', 'style']);
+DOMPurify.addAllowedAttributes('link', ['rel', 'href']);
+
+function enforceRel(HTML) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(HTML, 'text/html')
+
+  const links = doc.querySelectorAll('link')
+  links.forEach(link => {
+    const rel = link.getAttribute('rel')
+    if (rel !== 'stylesheet') {
+      link.remove()
+    }
+  })
+  return doc.body.innerHTML
+}
+
 async function fetchJson(url) {
   const response = await fetch(url);
   return await response.json()
@@ -68,7 +85,7 @@ function handleFormSubmit(event) {
     }, data);
   });
 
-  document.getElementById('result-preview-container').innerHTML = currentTemplate(data) 
+  document.getElementById('result-preview-container').innerHTML = enforceRel(DOMPurify.sanitize(currentTemplate(data)))
 
 }
 
