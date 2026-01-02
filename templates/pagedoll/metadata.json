@@ -1,0 +1,39 @@
+{
+  "template": "templates/pagedoll/doll.hbs",
+  "options": {
+    "src": {  
+      "type": "text", 
+      "label": "Doll Image URL",
+      "value": "https://file.garden/aTNlS0deYkPxCXcx/profile/doll_cmp.webp"
+    },
+    "button_text": {  
+      "type": "text", 
+      "label": "Button Text",
+      "value": "> > Toggle Pagedoll < <"
+    },
+    "x": {  
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "value": 15.2,
+      "step": 0.01,
+      "label": "Offset X"
+    },
+    "y": {  
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "value": 69.5,
+      "step": 0.01,
+      "label": "Offset Y"
+    },
+    "size": {  
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "value": 60,
+      "step": 0.1,
+      "label": "Doll Size"
+    }
+  }
+}

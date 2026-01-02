@@ -12,5 +12,12 @@
     "metadata": "templates/profile_background/metadata.json",
     "author": "Kayla",
     "homepage": "https://carrion.chat/character/Kayla"
+  },
+  {
+    "name": "Pagedolls",
+    "description": "Ever wanted a lil picture of you standing on the browser? Here's how to do it!",
+    "metadata": "templates/pagedoll/metadata.json",
+    "author": "Kayla",
+    "homepage": "https://carrion.chat/character/Kayla"
   }
 ]
