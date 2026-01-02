@@ -19,5 +19,12 @@
     "metadata": "templates/pagedoll/metadata.json",
     "author": "Kayla",
     "homepage": "https://carrion.chat/character/Kayla"
+  },
+  {
+    "name": "Wikia template",
+    "description": "Do you have what feels like an entire wiki worth of info? Well, here's a wiki template for you! (or at least the right side...)",
+    "metadata": "templates/wiki/metadata.json",
+    "author": "degenerate bird",
+    "homepage": "https://carrion.chat/character/Lava%20Loaf"
   }
 ]

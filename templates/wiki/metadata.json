@@ -1,0 +1,35 @@
+{
+  "template": "templates/wiki/sidebar.hbs",
+  "options": {
+    "theme-color": {
+      "type":"text",
+      "label":"Theme color",
+      "value": "#fa9431"
+    },
+    "quote": {
+      "type":"text",
+      "label":"Character quote",
+      "value": "Oh... A customer?"
+    },
+    "image": {
+      "type":"text",
+      "label":"Character reference image",
+      "value": "https://static.f-list.net/images/charinline/ed/13/ed132e0a4466632c4aff46947bab4ebd32ced5ad.png"
+    },
+    "char.race": {
+      "type":"text",
+      "label":"Character race",
+      "value": "Loaf"
+    },
+    "char.species": {
+      "type":"text",
+      "label":"Character species",
+      "value": "Fire elemental"
+    },
+    "char.class": {
+      "type":"text",
+      "label":"Character class",
+      "value": "Goo girl"
+    }
+  }
+}

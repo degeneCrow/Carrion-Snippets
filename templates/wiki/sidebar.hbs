@@ -1,0 +1,70 @@
+<style>
+#main {
+  display:flex;flex-direction:row-reverse;
+  gap: 2rem;
+  width: 100%;
+
+  --theme:{{theme-color}};
+}
+
+#main .col {
+  display:flex;flex:1;
+  flex-direction:column;
+}
+#main .col img {
+  object-fit:contain;
+  height:100%;max-height:400px
+}
+
+#main p {
+  text-align:justify;
+  text-indent:1.5rem;
+}
+
+#main blockquote {
+  text-align:center;
+  font-size:1.2rem;font-weight:bold;
+  border-color:var(--theme)
+}
+#main .classcard td {width:100%}
+</style>
+
+<div id="main">
+<div style="max-width:400px" class="col">
+
+<blockquote>{{quote}}</blockquote>
+
+<img src="{{image}}" />
+
+<table class="classcard"><tbody>
+<tr>
+  <th>Name</th>
+  <td>{{char.name}}</td>
+</tr>
+
+<tr>
+  <th>Race</th>
+  <td>{{char.race}}</td>
+</tr>
+
+<tr>
+  <th>Species</th>
+  <td>{{char.species}}</td>
+</tr>
+
+<tr>
+  <th>Class</th>
+  <td>{{char.class}}</td>
+</tr>
+
+</tbody></table>
+
+</div><!-- .col END -->
+
+<div class="col">
+
+And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot.
+
+</div><!-- .col END -->
+</div><!-- #main END -->
+
