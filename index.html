@@ -1,13 +1,40 @@
-<script src="lib/handlebars-v4.7.8.js"></script>
-<script src="lib/purify.min.js"></script>
-<script src="index.js"></script>
-<link rel="stylesheet" href="index.css">
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Carrion Snippet Emporium</title>
+  <meta charset="utf-8" lang="en">
+  <meta http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      img-src 'self' https: data:;
+      style-src
+        'self' 'unsafe-inline'
+        https://cdnjs.cloudflare.com https://file.garden
+      ;
+      script-src
+        'self' 'unsafe-eval' 'unsafe-hashes'
+        'sha256-s6D01a7SsNWH+HFHWlQgbfDp/qqyC+Ldn6IBgXrzStA='
+        'sha256-v2Nq40aknKZEGBmshq0risHZPnMvsZ/TQy30kJN+fUM='
+        'sha256-cHTaWouGlZ/h//kdXvu8HD2l9qfgjzHf3bm0VGjrfg4='
+      ;
+      font-src 'self' https://cdnjs.cloudflare.com">
+
+  <script src="lib/handlebars-v4.7.8.js"></script>
+  <script src="lib/purify.min.js"></script>
+  <script src="index.js" defer></script>
+</head>
+
+<body>
 
 <div id="template-list-container"></div>
+
 <form id="editor-form">
   <ul id="editor-container"></ul>
   <button type="submit">Refresh Display</button>
 </form>
-  <button type="submit" onclick="copyTemplate()">Copy Displayed HTML</button>
+<button type="submit" id="copyHtmlSnippet">Copy Displayed HTML</button>
+
 <div id="result-preview-container"></div>
 
+</body>
+</html>
