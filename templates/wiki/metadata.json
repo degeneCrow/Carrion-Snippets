@@ -16,20 +16,25 @@
       "label":"Character reference image",
       "value": "https://static.f-list.net/images/charinline/ed/13/ed132e0a4466632c4aff46947bab4ebd32ced5ad.png"
     },
+    "char.name": {
+      "type":"text",
+      "label":"Character name",
+      "value": "Loaf"
+    },
     "char.race": {
       "type":"text",
       "label":"Character race",
-      "value": "Loaf"
+      "value": "Fire elemental"
     },
     "char.species": {
       "type":"text",
       "label":"Character species",
-      "value": "Fire elemental"
+      "value": "Goo girl"
     },
     "char.class": {
       "type":"text",
       "label":"Character class",
-      "value": "Goo girl"
+      "value": "Cook"
     }
   }
 }
