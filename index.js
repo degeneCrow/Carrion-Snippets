@@ -80,8 +80,16 @@ function handleFormSubmit(event) {
     }, data);
   });
 
-  document.getElementById('result-preview-container').innerHTML = DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS)
+  updatePreview(data);
+}
 
+function updatePreview(data) {
+  const container = document.getElementById('result-preview-container');
+  const shadow = container.shadowRoot ?? container.attachShadow({ mode: "open" });
+  shadow.innerHTML = `
+    <link rel="stylesheet" href="/lib/shadow.css">
+    ${DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS)}
+  `;
 }
 
 async function setActiveTemplate(index) {
