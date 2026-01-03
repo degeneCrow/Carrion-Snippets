@@ -86,10 +86,18 @@ function handleFormSubmit(event) {
 }
 
 function updatePreview(data) {
-  SHADOW_DOM.innerHTML = `
-    <link rel="stylesheet" href="/lib/shadow.css">
-    ${DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS)}
-  `;
+  SHADOW_DOM.innerHTML = '';
+
+  const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/lib/shadow.css';
+
+  const wrap = document.createElement('div');
+  wrap.className = 'shadow-content';
+  wrap.innerHTML = DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS);
+
+  SHADOW_DOM.appendChild(link);
+  SHADOW_DOM.appendChild(wrap);
 }
 
 async function setActiveTemplate(index) {
@@ -103,14 +111,7 @@ async function setActiveTemplate(index) {
 }
 
 function copyTemplate() {
-  let template = SHADOW_DOM.innerHTML;
-
-  // Need to remove the Carrion ShadowDOM stylesheet link
-  // we don't have access to it, nor do we need to define it on profiles anyways
-  template = template.replace(
-    /^.*<link[^>]+href=["'](\.\/|\.\.\/|\/)[^"']+["'][^>]*>.*$\n?/gmi,
-    ""
-  );
+  let template = SHADOW_DOM.querySelector('.shadow-content').innerHTML;
 
   navigator.clipboard.writeText(template)
     .then(() => alert(
