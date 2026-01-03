@@ -1,0 +1,40 @@
+<style>
+.basic-gallery{
+  --height:{{bgal.height}};
+  --space:{{bgal.space}};
+}
+.basic-gallery>.bgal-images {
+  display:flex;
+  justify-content: center;
+  gap:var(--space);
+}
+.basic-gallery img {
+  max-height:var(--height);
+}
+</style>
+
+<details class="basic-gallery"><summary>Gallery</summary>
+<div class="bgal-images">
+
+{{#if img1.href}}
+  <img src="{{img1.href}}" title="{{img1.alt}}">
+{{/if}}
+
+{{#if img2.href}}
+  <img src="{{img2.href}}" title="{{img2.alt}}">
+{{/if}}
+
+{{#if img3.href}}
+  <img src="{{img3.href}}" title="{{img3.alt}}">
+{{/if}}
+
+{{#if img4.href}}
+  <img src="{{img4.href}}" title="{{img4.alt}}">
+{{/if}}
+
+{{#if img5.href}}
+  <img src="{{img5.href}}" title="{{img5.alt}}">
+{{/if}}
+
+</div>
+</details>

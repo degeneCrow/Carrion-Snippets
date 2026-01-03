@@ -1,0 +1,66 @@
+{
+  "template": "templates/basic_gallery/gallery.hbs",
+  "options": {
+    "bgal.height": {
+      "type":"text",
+      "label":"Thumbnail height",
+      "value":"150px"
+    },
+    "bgal.space": {
+      "type":"text",
+      "label":"Space between thumbnails",
+      "value":"2rem"
+    },
+
+    "img1.href": {
+      "type":"text",
+      "label":"Image no.01",
+      "value": "https://static.f-list.net/images/charimage/36548924.png"
+    },
+    "img1.alt": {
+      "type":"text",
+      "label":"Description of image no.01",
+      "value": "bi flag"
+    },
+    "img2.href": {
+      "type":"text",
+      "label":"Image no.02",
+      "value": "https://static.f-list.net/images/charimage/27415191.png"
+    },
+    "img2.alt": {
+      "type":"text",
+      "label":"Description of image no.02",
+      "value": "beach"
+    },
+    "img3.href": {
+      "type":"text",
+      "label":"Image no.03",
+      "value": "https://static.f-list.net/images/charimage/28587855.png"
+    },
+    "img3.alt": {
+      "type":"text",
+      "label":"Description of image no.03",
+      "value": "last minute spook"
+    },
+    "img4.href": {
+      "type":"text",
+      "label":"Image no.04",
+      "value": ""
+    },
+    "img4.alt": {
+      "type":"text",
+      "label":"Description of image no.04",
+      "value": ""
+    },
+    "img5.href": {
+      "type":"text",
+      "label":"Image no.05",
+      "value": ""
+    },
+    "img5.alt": {
+      "type":"text",
+      "label":"Description of image no.05",
+      "value": ""
+    }
+  }
+}
