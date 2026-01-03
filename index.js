@@ -2,6 +2,15 @@ let currentTemplate
 let manifest = []
 let cardTemplate
 
+let listButtonAdd = document.createElement('button');
+listButtonAdd.type = 'button';
+listButtonAdd.textContent = '+' ;
+listButtonAdd.dataset.action = 'add-item';
+let listButtonDel = document.createElement('button');
+listButtonDel.type = 'button';
+listButtonDel.textContent = '-' ;
+listButtonDel.dataset.action = 'del-item';
+
 const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
 const SHADOW_DOM = document.getElementById('result-preview-container')
     .attachShadow({ mode: "open" });
@@ -29,6 +38,7 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
 
   for (const [optionID, parameters] of Object.entries(options)) {
     console.log(optionID, parameters)
+
     let container = document.createElement('li')
     container.appendChild(Object.assign(document.createElement('label'), {
       innerHTML: parameters.label ?? optionID
@@ -38,17 +48,30 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
       case 'list':
         let nestedContainer = document.createElement('ul')
         nestedContainer.id = idPrefix + optionID
+
+        // Create the list items registered within the manifest
         for (const [i, item] of parameters.items.entries()) {
           let itemContainer = document.createElement('li')
           itemContainer.appendChild(Object.assign(document.createElement('label'), {
             innerHTML: i
           }))
           let newTarget = document.createElement('ul') 
+
+          //the actual input fields are created here
           buildTemplateConfigurator(item, newTarget, `${idPrefix}.${optionID}.${i}`)
+
           itemContainer.appendChild(newTarget)
           nestedContainer.appendChild(itemContainer)
         }
+
+        // list controls created here
+        const controls = document.createElement('div')
+        controls.append(listButtonAdd.cloneNode(true))
+        controls.append(listButtonDel.cloneNode(true))
+
         container.appendChild(nestedContainer)
+        container.appendChild(controls)
+        
         break
 
       default: 

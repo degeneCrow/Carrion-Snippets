@@ -10,6 +10,18 @@
     "images": { 
       "type": "list",
       "label": "Images", 
+      "template": {
+        "src": {
+          "type": "text",
+          "value": ""
+        },
+        "offset": {
+          "type": "number",
+          "value": "20",
+          "min": 0,
+          "max": 100
+        } 
+      },
       "items": [
         {
           "src": {
