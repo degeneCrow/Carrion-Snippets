@@ -8,12 +8,12 @@
     },
     "quote": {
       "type":"text",
-      "label":"Character quote",
+      "label":"Quote",
       "value": "Oh... A customer?"
     },
     "image": {
       "type":"text",
-      "label":"Character reference image",
+      "label":"Reference image",
       "value": "https://static.f-list.net/images/charinline/ed/13/ed132e0a4466632c4aff46947bab4ebd32ced5ad.png"
     },
     "char.name": {
