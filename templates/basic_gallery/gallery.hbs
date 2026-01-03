@@ -1,9 +1,9 @@
 <style>
-.basic-gallery{
+details.bgal{
   --height:{{bgal.height}};
   --space:{{bgal.space}};
 }
-.basic-gallery>.bgal-images {
+details.bgal>.images {
   display:flex;
   justify-content: center;
   flex-wrap:wrap;
@@ -11,14 +11,14 @@
   gap:var(--space);
   padding:{{bgal.space}} 0;
 }
-.basic-gallery img {
+details.bgal>.images img {
   max-height:var(--height);
   margin:0;
 }
 </style>
 
-<details class="basic-gallery"><summary>Gallery</summary>
-<div class="bgal-images">
+<details class="bgal"><summary>Gallery</summary>
+<div class="images">
 
 {{#if img1.href}}
   <img src="{{img1.href}}" title="{{img1.alt}}">
