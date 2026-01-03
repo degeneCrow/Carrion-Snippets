@@ -2,6 +2,18 @@ let currentTemplate
 let manifest = []
 let cardTemplate
 
+const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
+
+DOMPurify.addHook('uponSanitizeElement', function(node, data) {
+  switch (node.tagName) {
+    case 'LINK': 
+      node.setAttribute('rel', 'stylesheet')
+      break
+    default:
+      break
+  }
+});
+
 async function fetchJson(url) {
   const response = await fetch(url);
   return await response.json()
@@ -68,7 +80,7 @@ function handleFormSubmit(event) {
     }, data);
   });
 
-  document.getElementById('result-preview-container').innerHTML = currentTemplate(data) 
+  document.getElementById('result-preview-container').innerHTML = DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS)
 
 }
 
@@ -108,3 +120,6 @@ let data = {
 //let result = template(data);
 //previewDiv.innerHTML = result
 });
+
+document.getElementById('copyHtmlSnippet')
+  .addEventListener("click", copyTemplate);
