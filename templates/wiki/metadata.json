@@ -1,0 +1,40 @@
+{
+  "template": "templates/wiki/sidebar.hbs",
+  "options": {
+    "theme-color": {
+      "type":"text",
+      "label":"Theme color",
+      "value": "#fa9431"
+    },
+    "quote": {
+      "type":"text",
+      "label":"Quote",
+      "value": "Oh... A customer?"
+    },
+    "image": {
+      "type":"text",
+      "label":"Reference image",
+      "value": "https://static.f-list.net/images/charinline/ed/13/ed132e0a4466632c4aff46947bab4ebd32ced5ad.png"
+    },
+    "char.name": {
+      "type":"text",
+      "label":"Character name",
+      "value": "Loaf"
+    },
+    "char.race": {
+      "type":"text",
+      "label":"Character race",
+      "value": "Fire elemental"
+    },
+    "char.species": {
+      "type":"text",
+      "label":"Character species",
+      "value": "Goo girl"
+    },
+    "char.class": {
+      "type":"text",
+      "label":"Character class",
+      "value": "Cook"
+    }
+  }
+}
