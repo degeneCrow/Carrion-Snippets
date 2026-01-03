@@ -3,6 +3,8 @@ let manifest = []
 let cardTemplate
 
 const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
+const SHADOW_DOM = document.getElementById('result-preview-container')
+    .attachShadow({ mode: "open" });
 
 DOMPurify.addHook('uponSanitizeElement', function(node, data) {
   switch (node.tagName) {
@@ -84,9 +86,7 @@ function handleFormSubmit(event) {
 }
 
 function updatePreview(data) {
-  const container = document.getElementById('result-preview-container');
-  const shadow = container.shadowRoot ?? container.attachShadow({ mode: "open" });
-  shadow.innerHTML = `
+  SHADOW_DOM.innerHTML = `
     <link rel="stylesheet" href="/lib/shadow.css">
     ${DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS)}
   `;
@@ -103,7 +103,21 @@ async function setActiveTemplate(index) {
 }
 
 function copyTemplate() {
-  navigator.clipboard.writeText(document.getElementById('result-preview-container').innerHTML)
+  let template = SHADOW_DOM.innerHTML;
+
+  // Need to remove the Carrion ShadowDOM stylesheet link
+  // we don't have access to it, nor do we need to define it on profiles anyways
+  template = template.replace(
+    /^.*<link[^>]+href=["'](\.\/|\.\.\/|\/)[^"']+["'][^>]*>.*$\n?/gmi,
+    ""
+  );
+
+  navigator.clipboard.writeText(template)
+    .then(() => alert(
+      "Shadow DOM HTML copied!\n" +
+      "Now just copy it into your Carrion profile"
+    ))
+    .catch(err => console.error("Copy failed:", err));
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
