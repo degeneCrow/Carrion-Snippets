@@ -125,3 +125,6 @@ let data = {
 //let result = template(data);
 //previewDiv.innerHTML = result
 });
+
+document.getElementById('copyHtmlSnippet')
+  .addEventListener("click", copyTemplate);
