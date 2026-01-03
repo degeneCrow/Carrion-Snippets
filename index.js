@@ -114,10 +114,10 @@ function copyTemplate() {
   let template = SHADOW_DOM.querySelector('.shadow-content').innerHTML;
 
   navigator.clipboard.writeText(template)
-    .then(() => alert(
-      "Shadow DOM HTML copied!\n" +
-      "Now just copy it into your Carrion profile"
-    ))
+    .then(() => alert(`
+Output copied!
+Now you can paste it into your character description!
+    `))
     .catch(err => console.error("Copy failed:", err));
 }
 
