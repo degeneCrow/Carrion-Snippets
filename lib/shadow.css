@@ -1,0 +1,188 @@
+/* Reset box-sizing - not inherited from main page CSS */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base typography */
+:host {
+  display: block;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-family: inherit;
+  white-space: normal;
+}
+
+/* Paragraphs */
+p { margin: 0 0 0.75em 0; }
+p:last-child { margin-bottom: 0; }
+
+/* Headings */
+h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0.5em 0;
+  color: #ffffff;
+  border-bottom: 1px solid #3a3a3a;
+  padding-bottom: 0.3em;
+}
+  h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: 0.5em 0 0.4em;
+  color: #ffffff;
+}
+  h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin: 0.5em 0 0.3em;
+  color: #e0e0e0;
+}
+h4, h5, h6 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0.4em 0 0.3em;
+  color: #e0e0e0;
+}
+
+/* Emphasis */
+strong, b { font-weight: 700; color: inherit; }
+em, i { font-style: italic; color: inherit; }
+
+/* Links */
+a {
+  color: #66aaff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.2s;
+}
+a:hover { border-bottom-color: #66aaff; }
+a:visited { color: #9988ff; }
+
+/* Code */
+code {
+  background-color: #333333;
+  color: #ff79c6;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+}
+pre {
+  background-color: #333333;
+  padding: 0.75em;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 0.75em 0;
+  border-left: 3px solid #66aaff;
+}
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #e0e0e0;
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+  margin: 0.5em 0 0.75em 1.5em;
+  padding-left: 0.5em;
+}
+ol {
+  list-style-type: decimal;
+  margin: 0.5em 0 0.75em 1.5em;
+  padding-left: 0.5em;
+}
+li { margin: 0.3em 0; line-height: 1.5; }
+li > p { margin: 0.2em 0; }
+ul ul, ol ol, ul ol, ol ul { margin: 0.3em 0 0.3em 1em; }
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #66aaff;
+  padding: 0.5em 0 0.5em 1em;
+  margin: 0.75em 0;
+  background-color: #252525;
+  color: #cccccc;
+  font-style: italic;
+}
+blockquote p { margin: 0.3em 0; }
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 2px solid #3a3a3a;
+  margin: 1em 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  display: block;
+}
+th, td {
+  border: 1px solid #3a3a3a;
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+th {
+  background-color: #333333;
+  font-weight: 600;
+  color: #ffffff;
+}
+tr:nth-child(even) { background-color: #252525; }
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+
+/* Strikethrough */
+del, s {
+  text-decoration: line-through;
+  color: #999999;
+}
+
+/* Highlight */
+mark {
+  background-color: #ffeb3b;
+  color: #1a1a1a;
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+/* Sub/superscript */
+sub, sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* Collapsibles */
+details {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  background-color: #252525;
+  border-radius: 4px;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #66aaff;
+}
+summary:hover { color: #88ccff; }
+
+/* Underline (custom syntax) */
+u { text-decoration: underline; }
+
+/* Marquee (because why not) */
+marquee { display: block; }
+

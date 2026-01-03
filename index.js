@@ -3,6 +3,8 @@ let manifest = []
 let cardTemplate
 
 const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
+const SHADOW_DOM = document.getElementById('result-preview-container')
+    .attachShadow({ mode: "open" });
 
 DOMPurify.addHook('uponSanitizeElement', function(node, data) {
   switch (node.tagName) {
@@ -80,8 +82,22 @@ function handleFormSubmit(event) {
     }, data);
   });
 
-  document.getElementById('result-preview-container').innerHTML = DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS)
+  updatePreview(data);
+}
 
+function updatePreview(data) {
+  SHADOW_DOM.innerHTML = '';
+
+  const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/lib/shadow.css';
+
+  const wrap = document.createElement('div');
+  wrap.className = 'shadow-content';
+  wrap.innerHTML = DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS);
+
+  SHADOW_DOM.appendChild(link);
+  SHADOW_DOM.appendChild(wrap);
 }
 
 async function setActiveTemplate(index) {
@@ -95,7 +111,14 @@ async function setActiveTemplate(index) {
 }
 
 function copyTemplate() {
-  navigator.clipboard.writeText(document.getElementById('result-preview-container').innerHTML)
+  let template = SHADOW_DOM.querySelector('.shadow-content').innerHTML;
+
+  navigator.clipboard.writeText(template)
+    .then(() => alert(
+      "Shadow DOM HTML copied!\n" +
+      "Now just copy it into your Carrion profile"
+    ))
+    .catch(err => console.error("Copy failed:", err));
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
