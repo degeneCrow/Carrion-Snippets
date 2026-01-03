@@ -2,22 +2,17 @@ let currentTemplate
 let manifest = []
 let cardTemplate
 
-DOMPurify.addAllowedTags(['link', 'style']);
-DOMPurify.addAllowedAttributes('link', ['rel', 'href']);
+const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
 
-function enforceRel(HTML) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(HTML, 'text/html')
-
-  const links = doc.querySelectorAll('link')
-  links.forEach(link => {
-    const rel = link.getAttribute('rel')
-    if (rel !== 'stylesheet') {
-      link.remove()
-    }
-  })
-  return doc.body.innerHTML
-}
+DOMPurify.addHook('uponSanitizeElement', function(node, data) {
+  switch (node.tagName) {
+    case 'LINK': 
+      node.setAttribute('rel', 'stylesheet')
+      break
+    default:
+      break
+  }
+});
 
 async function fetchJson(url) {
   const response = await fetch(url);
@@ -85,7 +80,7 @@ function handleFormSubmit(event) {
     }, data);
   });
 
-  document.getElementById('result-preview-container').innerHTML = enforceRel(DOMPurify.sanitize(currentTemplate(data)))
+  document.getElementById('result-preview-container').innerHTML = DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS)
 
 }
 
