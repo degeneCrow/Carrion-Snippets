@@ -11,6 +11,11 @@ details.bgal>.images {
   gap:var(--space);
   padding:{{bgal.space}} 0;
 }
+details.bgal>.images a{border:none}
+details.bgal>.images a:hover {
+  border:none;
+  transform:scale(1.1);
+}
 details.bgal>.images img {
   max-height:var(--height);
   margin:0;
@@ -21,23 +26,33 @@ details.bgal>.images img {
 <div class="images">
 
 {{#if img1.href}}
-  <img src="{{img1.href}}" title="{{img1.alt}}" loading="lazy">
+<a href="{{img1.href}}">
+  <img src="{{img1.href}}" title="{{img1.alt}}">
+</a>
 {{/if}}
 
 {{#if img2.href}}
-  <img src="{{img2.href}}" title="{{img2.alt}}" loading="lazy">
+<a href="{{img2.href}}">
+  <img src="{{img2.href}}" title="{{img2.alt}}">
+</a>
 {{/if}}
 
 {{#if img3.href}}
-  <img src="{{img3.href}}" title="{{img3.alt}}" loading="lazy">
+<a href="{{img3.href}}">
+  <img src="{{img3.href}}" title="{{img3.alt}}">
+</a>
 {{/if}}
 
 {{#if img4.href}}
-  <img src="{{img4.href}}" title="{{img4.alt}}" loading="lazy">
+<a href="{{img4.href}}">
+  <img src="{{img4.href}}" title="{{img4.alt}}">
+</a>
 {{/if}}
 
 {{#if img5.href}}
-  <img src="{{img5.href}}" title="{{img5.alt}}" loading="lazy">
+<a href="{{img5.href}}">
+  <img src="{{img5.href}}" title="{{img5.alt}}">
+</a>
 {{/if}}
 
 </div>
