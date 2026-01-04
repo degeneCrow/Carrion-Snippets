@@ -2,14 +2,18 @@ let currentTemplate
 let manifest = []
 let cardTemplate
 
-let listButtonAdd = document.createElement('button');
+const listButtonAdd = document.createElement('button');
 listButtonAdd.type = 'button';
 listButtonAdd.textContent = '+' ;
 listButtonAdd.dataset.action = 'add-item';
-let listButtonDel = document.createElement('button');
+const listButtonDel = document.createElement('button');
 listButtonDel.type = 'button';
 listButtonDel.textContent = '-' ;
 listButtonDel.dataset.action = 'del-item';
+const listControls = document.createElement('div');
+listControls.append(listButtonAdd); 
+listControls.append(listButtonDel);
+listControls.style = "display:inline";
 
 const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
 const SHADOW_DOM = document.getElementById('result-preview-container')
@@ -49,6 +53,11 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
         let nestedContainer = document.createElement('ul')
         nestedContainer.id = idPrefix + optionID
 
+        // list controls created here
+        if (parameters.template) {
+          container.appendChild(listControls.cloneNode(true))
+	}
+
         // Create the list items registered within the manifest
         for (const [i, item] of parameters.items.entries()) {
           let itemContainer = document.createElement('li')
@@ -63,15 +72,7 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
           itemContainer.appendChild(newTarget)
           nestedContainer.appendChild(itemContainer)
         }
-
-        // list controls created here
-        const controls = document.createElement('div')
-        controls.append(listButtonAdd.cloneNode(true))
-        controls.append(listButtonDel.cloneNode(true))
-
         container.appendChild(nestedContainer)
-        container.appendChild(controls)
-        
         break
 
       default: 
