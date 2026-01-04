@@ -15,6 +15,18 @@
     "images": {
       "type":"list",
       "label":"Images",
+      "template": {
+        "href": {
+          "type":"text",
+          "label":"src",
+          "value": ""
+        },
+        "alt": {
+          "type":"text",
+          "label":"Description",
+          "value": ""
+	}
+      },
       "items":[
       {
         "href": {
