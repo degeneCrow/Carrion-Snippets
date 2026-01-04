@@ -187,7 +187,8 @@ function addListItem(list) {
   let template = JSON.parse(list.dataset.template)
   buildTemplateConfigurator(template, newItem, itemId)
   
-  list.dataset.nextIndex += 1
+  //update DOM
+  list.dataset.nextIndex = Number(list.dataset.nextIndex)+ 1
   newCont.append(newItem)
   list.append(newCont)
 }
