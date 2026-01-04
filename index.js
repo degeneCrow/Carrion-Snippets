@@ -52,9 +52,11 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
       case 'list':
         let nestedContainer = document.createElement('ul')
         nestedContainer.id = idPrefix + optionID
+        nestedContainer.dataset.nextIndex = 0;
 
         // list controls created here
         if (parameters.template) {
+          nestedContainer.dataset.template = JSON.stringify(parameters.template)
           container.appendChild(listControls.cloneNode(true))
 	}
 
@@ -64,6 +66,7 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
           itemContainer.appendChild(Object.assign(document.createElement('label'), {
             innerHTML: i
           }))
+          nestedContainer.dataset.nextIndex = i + 1;
           let newTarget = document.createElement('ul') 
 
           //the actual input fields are created here
@@ -170,3 +173,34 @@ let data = {
 
 document.getElementById('copyHtmlSnippet')
   .addEventListener("click", copyTemplate);
+
+// List item management
+function addListItem(list) {
+  const itemId = `${list.id}.${list.dataset.nextIndex}`
+  
+  let newCont = document.createElement('li')
+  newCont.appendChild(Object.assign(document.createElement('label'), {
+    innerHTML: list.dataset.nextIndex
+  }))
+  let newItem = document.createElement('ul')
+
+  let template = JSON.parse(list.dataset.template)
+  buildTemplateConfigurator(template, newItem, itemId)
+  
+  list.dataset.nextIndex += 1
+  newCont.append(newItem)
+  list.append(newCont)
+}
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-action]')
+  if(!btn) return
+
+  const list = btn.closest('li').querySelector('ul[data-template]')
+  if(!list) return
+
+  if(btn.dataset.action === 'add-item')
+    addListItem(list)
+  else if(btn.dataset.action === 'del-item')
+    list.lastElementChild?.remove()
+})
