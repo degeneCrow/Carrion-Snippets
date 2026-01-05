@@ -86,11 +86,39 @@
 
 <form id="editor-form">
   <ul id="editor-container"></ul>
-  <button class="btn btn-secondary" type="submit">Refresh Display</button>
-  <button class="btn btn-secondary" type="button" id="copyHtmlSnippet">Copy Displayed HTML</button>
 </form>
 
-<div id="result-preview-container"></div>
+<!-- Carrion Profile Card HTML -->
+<div class="container">
+  <div id="filtered-profile-content" class="card">
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <h1 style="margin-bottom: 8px;">Username</h1>
+        <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+          <span class="status-offline"><i class="fa-regular fa-circle"></i> Offline</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-secondary" type="submit" id="refresh-display-button">Refresh Display</button>
+        <button class="btn btn-secondary" type="button" id="copy-html-button">Copy Displayed HTML</button>
+      </div>
+    </div>
+    <div class="card-body" data-character-id="1395">
+      <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: 24px;">
+        <div id="profile-avatar-container" style="position: relative; width: 200px; height: 200px;">
+          <div id="profile-avatar" style="width: 200px; height: 200px; background-color: #3a3a3a; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999999; font-size: 96px; font-weight: 300; user-select: none; overflow: hidden;" title="No avatar">?</div>
+        </div>
+      </div>
+      <div style="margin-bottom: 24px;">
+        <h3 style="font-size: 16px; margin-bottom: 12px;">Description</h3>
+        <div id="character-description" data-markdown="Robotic falcon character. WIll be filled out soon!" style="background-color: #2a2a2a; padding: 16px; border-radius: 4px; line-height: 1.6;">
+          <!-- Preview will be rendered here by JavaScript -->
+          <div style="color: #999; font-style: italic;">Loading description...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <p style="margin-top: 2em;">This page is super WIP and will have nice styling sometime soon. For now, I just wanted to get basic functionality out the door.</p>

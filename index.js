@@ -1,9 +1,11 @@
 let currentTemplate
 let manifest = []
 let cardTemplate
+let editorForm
+
 
 const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
-const SHADOW_DOM = document.getElementById('result-preview-container')
+const SHADOW_DOM = document.getElementById('character-description')
     .attachShadow({ mode: "open" });
 
 
@@ -148,7 +150,7 @@ async function setActiveTemplate(index) {
 
   editor.innerHTML = ""
   previewDiv = buildTemplateConfigurator(metadata.options, editor)
-  updatePreview(getFormData(document.getElementById('editor-form')))
+  updatePreview(getFormData(editorForm))
 }
 
 // Copy the template to the clipboard
@@ -165,6 +167,7 @@ Now you can paste it into your character description!
 
 // Wait until DOM is loaded to start manipulating shit. Also lets us use async code in here.
 document.addEventListener("DOMContentLoaded", async function() {
+  editorForm = document.getElementById('editor-form')
   manifest = await fetchJson('templates/manifest.json')
   cardTemplate = await fetchTemplate('assets/templates/card.hbs')
   document.getElementById('editor-form')
@@ -179,8 +182,10 @@ document.addEventListener("DOMContentLoaded", async function() {
 })
 
 // Add click events to UI buttons
-document.getElementById('copyHtmlSnippet')
+document.getElementById('copy-html-button')
   .addEventListener("click", copyTemplate);
+document.getElementById('refresh-display-button')
+  .addEventListener("click", () => { updatePreview(getFormData(editorForm)) });
 
 
 // List item management
