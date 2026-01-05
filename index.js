@@ -96,10 +96,8 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
 }
 
 
-function handleFormSubmit(event) {
-  event.preventDefault()
-
-  const formData = new FormData(this)
+function getFormData(form) {
+  const formData = new FormData(form)
   const data = {}
 
   // Do some black magic reduce bullshit that I already forgot how it works to filter the form back into a list.
@@ -116,8 +114,13 @@ function handleFormSubmit(event) {
       return acc[part]
     }, data);
   });
+  return data
+}
 
-  updatePreview(data);
+
+function handleFormSubmit(event) {
+  event.preventDefault() 
+  updatePreview(getFormData(this))
 }
 
 // Update the shadow dom preview
@@ -145,6 +148,7 @@ async function setActiveTemplate(index) {
 
   editor.innerHTML = ""
   previewDiv = buildTemplateConfigurator(metadata.options, editor)
+  updatePreview(getFormData(document.getElementById('editor-form')))
 }
 
 // Copy the template to the clipboard
