@@ -2,6 +2,19 @@ let currentTemplate
 let manifest = []
 let cardTemplate
 
+const listButtonAdd = document.createElement('button');
+listButtonAdd.type = 'button';
+listButtonAdd.textContent = '+' ;
+listButtonAdd.dataset.action = 'add-item';
+const listButtonDel = document.createElement('button');
+listButtonDel.type = 'button';
+listButtonDel.textContent = '-' ;
+listButtonDel.dataset.action = 'del-item';
+const listControls = document.createElement('div');
+listControls.append(listButtonAdd); 
+listControls.append(listButtonDel);
+listControls.style = "display:inline";
+
 const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
 const SHADOW_DOM = document.getElementById('result-preview-container')
     .attachShadow({ mode: "open" });
@@ -29,6 +42,7 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
 
   for (const [optionID, parameters] of Object.entries(options)) {
     console.log(optionID, parameters)
+
     let container = document.createElement('li')
     container.appendChild(Object.assign(document.createElement('label'), {
       innerHTML: parameters.label ?? optionID
@@ -38,13 +52,26 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
       case 'list':
         let nestedContainer = document.createElement('ul')
         nestedContainer.id = idPrefix + optionID
+        nestedContainer.dataset.nextIndex = 0;
+
+        // list controls created here
+        if (parameters.template) {
+          nestedContainer.dataset.template = JSON.stringify(parameters.template)
+          container.appendChild(listControls.cloneNode(true))
+	}
+
+        // Create the list items registered within the manifest
         for (const [i, item] of parameters.items.entries()) {
           let itemContainer = document.createElement('li')
           itemContainer.appendChild(Object.assign(document.createElement('label'), {
             innerHTML: i
           }))
+          nestedContainer.dataset.nextIndex = i + 1;
           let newTarget = document.createElement('ul') 
+
+          //the actual input fields are created here
           buildTemplateConfigurator(item, newTarget, `${idPrefix}.${optionID}.${i}`)
+
           itemContainer.appendChild(newTarget)
           nestedContainer.appendChild(itemContainer)
         }
@@ -146,3 +173,35 @@ let data = {
 
 document.getElementById('copyHtmlSnippet')
   .addEventListener("click", copyTemplate);
+
+// List item management
+function addListItem(list) {
+  const itemId = `${list.id}.${list.dataset.nextIndex}`
+  
+  let newCont = document.createElement('li')
+  newCont.appendChild(Object.assign(document.createElement('label'), {
+    innerHTML: list.dataset.nextIndex
+  }))
+  let newItem = document.createElement('ul')
+
+  let template = JSON.parse(list.dataset.template)
+  buildTemplateConfigurator(template, newItem, itemId)
+  
+  //update DOM
+  list.dataset.nextIndex = Number(list.dataset.nextIndex)+ 1
+  newCont.append(newItem)
+  list.append(newCont)
+}
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-action]')
+  if(!btn) return
+
+  const list = btn.closest('li').querySelector('ul[data-template]')
+  if(!list) return
+
+  if(btn.dataset.action === 'add-item')
+    addListItem(list)
+  else if(btn.dataset.action === 'del-item')
+    list.lastElementChild?.remove()
+})
