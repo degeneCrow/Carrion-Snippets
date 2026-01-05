@@ -1,6 +1,11 @@
 #template-list-container {
   gap: 5px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+#template-list-container > button {
+  max-width: min(50%, 32em);
 }
 
 article p {
