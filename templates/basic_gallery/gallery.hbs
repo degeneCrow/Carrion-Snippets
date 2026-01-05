@@ -1,0 +1,41 @@
+<style>
+details.bgal{
+  --height:{{bgal.height}};
+  --space:{{bgal.space}};
+}
+details.bgal>.images {
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
+
+  gap:var(--space);
+  padding:{{bgal.space}} 0;
+}
+details.bgal>.images a{
+  border:none;
+  transition: transform 0.2s
+}
+details.bgal>.images a:hover {
+  border:none;
+  transform:scale(1.1);
+}
+details.bgal>.images img {
+  max-height:var(--height);
+  max-width:var(--height);
+  margin:0;
+}
+</style>
+
+<details class="bgal"><summary>Gallery</summary>
+<div class="images">
+
+{{#each images}}
+{{#if href}}
+<a href="{{href}}">
+  <img src="{{href}}" title="{{alt}}">
+</a>
+{{/if}}
+{{/each}}
+
+</div>
+</details>
