@@ -24,40 +24,16 @@
       },
       "items": [
         {
-          "src": {
-            "type": "text",
-            "value": "https://file.garden/aTNlS0deYkPxCXcx/css/gallery/1.jpeg"
-          },
-          "offset": {
-            "type": "number",
-            "value": "50",
-            "min": 0,
-            "max": 100
-          }
+          "src": "https://file.garden/aTNlS0deYkPxCXcx/css/gallery/1.jpeg",
+          "offset": "50"
         },
         {
-          "src": {
-            "type": "text",
-            "value": "https://file.garden/aTNlS0deYkPxCXcx/css/gallery/2.jpeg"
-          },
-          "offset": {
-            "type": "number",
-            "value": "20",
-            "min": 0,
-            "max": 100
-          }
+          "src": "https://file.garden/aTNlS0deYkPxCXcx/css/gallery/2.jpeg",
+          "offset": "50"
         },
         {
-          "src": {
-            "type": "text",
-            "value": "https://file.garden/aTNlS0deYkPxCXcx/css/gallery/1.jpeg"
-          },
-          "offset": {
-            "type": "number",
-            "value": "20",
-            "min": 0,
-            "max": 100
-          }
+          "src": "https://file.garden/aTNlS0deYkPxCXcx/css/gallery/1.jpeg",
+          "offset": "50"
         }
       ]
     }

@@ -66,23 +66,12 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
         nestedContainer.dataset.template = JSON.stringify(parameters.template) 
 
         // Create the list items registered within the manifest
-        for (const [i, item] of parameters.items.entries()) {
-          const itemContainer = document.createElement('li')
-          itemContainer.appendChild(Object.assign(document.createElement('label'), {
-            innerHTML: i
-          }))
-          nestedContainer.dataset.nextIndex = i + 1;
-          const newTarget = document.createElement('ul') 
-
-          //the actual input fields are created here
-          buildTemplateConfigurator(item, newTarget, `${idPrefix}.${optionID}.${i}`)
-
-          itemContainer.appendChild(newTarget)
-          nestedContainer.appendChild(itemContainer)
-        }
-
+        for (const item of parameters.items) { addListItem(nestedContainer, item) }
         container.appendChild(nestedContainer)
-        container.appendChild(controls)
+
+        // Only show add / remove if the template author intends it to be editable
+        if (parameters.editable) { container.appendChild(controls) }
+
         break
 
       default: 
@@ -189,7 +178,8 @@ document.getElementById('refresh-display-button')
 
 
 // List item management
-function addListItem(list) {
+function addListItem(list, values = {}) { 
+
   const itemId = `${list.id}.${list.dataset.nextIndex}`
   
   const newCont = document.createElement('li')
@@ -199,10 +189,16 @@ function addListItem(list) {
   const newItem = document.createElement('ul')
 
   const template = JSON.parse(list.dataset.template)
+
+  // Fill with new values if provided
+  for (const [key, value] of Object.entries(values)) {
+    template[key].value = value;
+  }
+
   buildTemplateConfigurator(template, newItem, itemId)
   
   //update DOM
-  list.dataset.nextIndex = Number(list.dataset.nextIndex)+ 1
+  list.dataset.nextIndex = Number(list.dataset.nextIndex) + 1
   newCont.append(newItem)
   list.append(newCont)
 }
