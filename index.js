@@ -131,7 +131,7 @@ function updatePreview(data) {
 
   const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/lib/shadow.css';
+    link.href = 'lib/shadow.css';
 
   const wrap = document.createElement('div');
   wrap.className = 'shadow-content';
