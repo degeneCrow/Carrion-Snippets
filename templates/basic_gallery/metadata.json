@@ -2,53 +2,52 @@
   "template": "templates/basic_gallery/gallery.hbs",
   "options": {
     "bgal.height": {
-      "type":"text",
-      "label":"Thumbnail height",
-      "value":"150px"
+      "type": "text",
+      "label": "Thumbnail height",
+      "value": "150px"
     },
     "bgal.space": {
-      "type":"text",
-      "label":"Space between thumbnails",
-      "value":"2rem"
+      "type": "text",
+      "label": "Space between thumbnails",
+      "value": "2rem"
     },
-
     "images": {
-      "type":"list",
-      "label":"Images",
+      "type": "list",
+      "label": "Images",
       "template": {
         "href": {
-          "type":"text",
-          "label":"src",
+          "type": "text",
+          "label": "src",
           "value": ""
         },
         "alt": {
-          "type":"text",
-          "label":"Description",
+          "type": "text",
+          "label": "Description",
           "value": ""
-	      }
+        }
       },
-      "items":[
-      {
-        "href": "https://static.f-list.net/images/charimage/36548924.png",
-        "alt": "bi flag"
-      },
-      {
-        "href": "https://static.f-list.net/images/charimage/27415191.png",
-        "alt": "beach"
-      },
-      {
-        "href": "https://static.f-list.net/images/charimage/28587855.png",
-        "alt": "last minute spook"
-      },
-      {
-        "href": "",
-        "alt": ""
-      },
-      {
-        "href": "",
-        "alt": ""
-      }
-    ]
+      "items": [
+        {
+          "href": "https://static.f-list.net/images/charimage/36548924.png",
+          "alt": "bi flag"
+        },
+        {
+          "href": "https://static.f-list.net/images/charimage/27415191.png",
+          "alt": "beach"
+        },
+        {
+          "href": "https://static.f-list.net/images/charimage/28587855.png",
+          "alt": "last minute spook"
+        },
+        {
+          "href": "",
+          "alt": ""
+        },
+        {
+          "href": "",
+          "alt": ""
+        }
+      ]
     }
   }
 }
