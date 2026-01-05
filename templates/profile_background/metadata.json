@@ -6,8 +6,9 @@
       "label": "Fallback color"
     },
     "src": {  
-      "type": "text", 
-      "label": "Image URL"
+      "type": "text",
+      "label": "Image URL",
+      "value": "https://file.garden/aTNlS0deYkPxCXcx/css/gallery/1.jpeg"
     }
   }
 }
