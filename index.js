@@ -70,7 +70,7 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
         container.appendChild(nestedContainer)
 
         // Only show add / remove if the template author intends it to be editable
-        if (parameters.editable) { container.appendChild(controls) }
+        if (parameters.editable ?? true) { container.appendChild(controls) }
 
         break
 
@@ -201,4 +201,19 @@ function addListItem(list, values = {}) {
   list.dataset.nextIndex = Number(list.dataset.nextIndex) + 1
   newCont.append(newItem)
   list.append(newCont)
+  fixListIndexes(list)
+}
+
+
+function fixListIndexes(list) {
+  /*
+    Only fixes the displayed IDs, as actual indexes in the ids do not matter in any way shape or form since templates can skip empty indexes.
+    Also, fixing the IDs here would require a huge recursive check, so if we REALLY care, it would be better to just do it once before passing to template.
+
+    Also, I'm lazy. - Kayla
+  */
+  for (const [i, child] of Object.entries(list.childNodes)) {
+    child.firstElementChild.textContent = i
+  }
+
 }
