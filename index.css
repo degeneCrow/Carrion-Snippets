@@ -19,3 +19,7 @@ article p {
   margin:0 auto;
   padding:0 1rem;
 }
+
+.list-controls {
+  display: inline;
+}

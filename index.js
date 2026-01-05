@@ -2,23 +2,12 @@ let currentTemplate
 let manifest = []
 let cardTemplate
 
-const listButtonAdd = document.createElement('button');
-listButtonAdd.type = 'button';
-listButtonAdd.textContent = '+' ;
-listButtonAdd.dataset.action = 'add-item';
-const listButtonDel = document.createElement('button');
-listButtonDel.type = 'button';
-listButtonDel.textContent = '-' ;
-listButtonDel.dataset.action = 'del-item';
-const listControls = document.createElement('div');
-listControls.append(listButtonAdd); 
-listControls.append(listButtonDel);
-listControls.style = "display:inline";
-
 const DOMPURIFY_OPTS = {ADD_TAGS: ['link'], FORCE_BODY: true}
 const SHADOW_DOM = document.getElementById('result-preview-container')
     .attachShadow({ mode: "open" });
 
+
+// Make sure link tags are safe
 DOMPurify.addHook('uponSanitizeElement', function(node, data) {
   switch (node.tagName) {
     case 'LINK': 
@@ -29,45 +18,60 @@ DOMPurify.addHook('uponSanitizeElement', function(node, data) {
   }
 });
 
+
 async function fetchJson(url) {
   const response = await fetch(url);
   return await response.json()
 }
+
+
 async function fetchTemplate(template) {
   const response = await fetch(template)
   return Handlebars.compile(await response.text())
 }
 
+// Ui Generator, called recursively for lists.
 function buildTemplateConfigurator(options, targetNode, idPrefix = "") { 
 
   for (const [optionID, parameters] of Object.entries(options)) {
-    console.log(optionID, parameters)
 
-    let container = document.createElement('li')
+    const container = document.createElement('li')
     container.appendChild(Object.assign(document.createElement('label'), {
       innerHTML: parameters.label ?? optionID
     }))
 
     switch (parameters.type) {
       case 'list':
-        let nestedContainer = document.createElement('ul')
+        const nestedContainer = document.createElement('ul')
         nestedContainer.id = idPrefix + optionID
         nestedContainer.dataset.nextIndex = 0;
 
-        // list controls created here
+        // List controls created here
         if (parameters.template) {
+          const controls = Object.assign(document.createElement('div'), {
+            className: 'list-controls'
+          })
+          controls.appendChild(Object.assign(document.createElement('button'), {
+            textContent: '-',
+            onclick: (e) => { e.target.parentElement.nextElementSibling.lastElementChild?.remove() }
+          }))
+          controls.appendChild(Object.assign(document.createElement('button'), {
+            textContent: '+',
+            onclick: (e) => { addListItem(e.target.parentElement.nextElementSibling) }
+          }))
+
           nestedContainer.dataset.template = JSON.stringify(parameters.template)
-          container.appendChild(listControls.cloneNode(true))
-	}
+          container.appendChild(controls)
+	      }
 
         // Create the list items registered within the manifest
         for (const [i, item] of parameters.items.entries()) {
-          let itemContainer = document.createElement('li')
+          const itemContainer = document.createElement('li')
           itemContainer.appendChild(Object.assign(document.createElement('label'), {
             innerHTML: i
           }))
           nestedContainer.dataset.nextIndex = i + 1;
-          let newTarget = document.createElement('ul') 
+          const newTarget = document.createElement('ul') 
 
           //the actual input fields are created here
           buildTemplateConfigurator(item, newTarget, `${idPrefix}.${optionID}.${i}`)
@@ -75,6 +79,7 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
           itemContainer.appendChild(newTarget)
           nestedContainer.appendChild(itemContainer)
         }
+
         container.appendChild(nestedContainer)
         break
 
@@ -85,9 +90,11 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
         })) 
         break
     }
+
     targetNode.appendChild(container)
   }
 }
+
 
 function handleFormSubmit(event) {
   event.preventDefault()
@@ -95,6 +102,7 @@ function handleFormSubmit(event) {
   const formData = new FormData(this)
   const data = {}
 
+  // Do some black magic reduce bullshit that I already forgot how it works to filter the form back into a list.
   formData.forEach((value, key) => {
     const cleanedKey = key.startsWith('.') ? key.substring(1) : key
     const keys = cleanedKey.split('.')
@@ -112,6 +120,7 @@ function handleFormSubmit(event) {
   updatePreview(data);
 }
 
+// Update the shadow dom preview
 function updatePreview(data) {
   SHADOW_DOM.innerHTML = '';
 
@@ -127,18 +136,20 @@ function updatePreview(data) {
   SHADOW_DOM.appendChild(wrap);
 }
 
+// Sets the current template from it's manifest index
 async function setActiveTemplate(index) {
-  let info = manifest[index]
-  let metadata = await fetchJson(info.metadata)
+  const info = manifest[index]
+  const metadata = await fetchJson(info.metadata)
   currentTemplate = await fetchTemplate(metadata.template)
-  let editor = document.getElementById('editor-container')
+  const editor = document.getElementById('editor-container')
+
   editor.innerHTML = ""
   previewDiv = buildTemplateConfigurator(metadata.options, editor)
-  console.log(metadata)
 }
 
+// Copy the template to the clipboard
 function copyTemplate() {
-  let template = SHADOW_DOM.querySelector('.shadow-content').innerHTML;
+  const template = SHADOW_DOM.querySelector('.shadow-content').innerHTML;
 
   navigator.clipboard.writeText(template)
     .then(() => alert(`
@@ -148,43 +159,37 @@ Now you can paste it into your character description!
     .catch(err => console.error("Copy failed:", err));
 }
 
+// Wait until DOM is loaded to start manipulating shit. Also lets us use async code in here.
 document.addEventListener("DOMContentLoaded", async function() {
   manifest = await fetchJson('templates/manifest.json')
   cardTemplate = await fetchTemplate('assets/templates/card.hbs')
-  document.getElementById('editor-form').addEventListener('submit', handleFormSubmit)
+  document.getElementById('editor-form')
+    .addEventListener('submit', handleFormSubmit)
 
   const tempDiv = document.createElement('div')
   for (const [index, item] of manifest.entries()) {
     tempDiv.innerHTML = cardTemplate({index, ...item})
+    tempDiv.firstChild.onclick = (e) => { setActiveTemplate(index) }
     document.getElementById('template-list-container').appendChild(tempDiv.firstChild)
-}
+  }
+})
 
-let data = {
-  images: [
-    { src: "https://file.garden/aTNlS0deYkPxCXcx/profile/st2_cmp.webp", pos: "80%" },
-  ],
-  prefix: "Hello",
-}
-
-//fetchTemplate("stripe_gallery.hbs")
-//let result = template(data);
-//previewDiv.innerHTML = result
-});
-
+// Add click events to UI buttons
 document.getElementById('copyHtmlSnippet')
   .addEventListener("click", copyTemplate);
+
 
 // List item management
 function addListItem(list) {
   const itemId = `${list.id}.${list.dataset.nextIndex}`
   
-  let newCont = document.createElement('li')
+  const newCont = document.createElement('li')
   newCont.appendChild(Object.assign(document.createElement('label'), {
     innerHTML: list.dataset.nextIndex
   }))
-  let newItem = document.createElement('ul')
+  const newItem = document.createElement('ul')
 
-  let template = JSON.parse(list.dataset.template)
+  const template = JSON.parse(list.dataset.template)
   buildTemplateConfigurator(template, newItem, itemId)
   
   //update DOM
@@ -192,16 +197,3 @@ function addListItem(list) {
   newCont.append(newItem)
   list.append(newCont)
 }
-
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('button[data-action]')
-  if(!btn) return
-
-  const list = btn.closest('li').querySelector('ul[data-template]')
-  if(!list) return
-
-  if(btn.dataset.action === 'add-item')
-    addListItem(list)
-  else if(btn.dataset.action === 'del-item')
-    list.lastElementChild?.remove()
-})
