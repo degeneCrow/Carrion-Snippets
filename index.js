@@ -47,22 +47,21 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
         nestedContainer.dataset.nextIndex = 0;
 
         // List controls created here
-        if (parameters.template) {
-          const controls = Object.assign(document.createElement('div'), {
-            className: 'list-controls'
-          })
-          controls.appendChild(Object.assign(document.createElement('button'), {
-            textContent: '-',
-            onclick: (e) => { e.target.parentElement.nextElementSibling.lastElementChild?.remove() }
-          }))
-          controls.appendChild(Object.assign(document.createElement('button'), {
-            textContent: '+',
-            onclick: (e) => { addListItem(e.target.parentElement.nextElementSibling) }
-          }))
+        const controls = Object.assign(document.createElement('div'), {
+          className: 'list-controls'
+        })
+        controls.appendChild(Object.assign(document.createElement('button'), {
+          textContent: '-',
+          className: 'btn btn-secondary',
+          onclick: (e) => { e.target.parentElement.previousElementSibling.lastElementChild?.remove() }
+        }))
+        controls.appendChild(Object.assign(document.createElement('button'), {
+          textContent: '+',
+          className: 'btn btn-secondary',
+          onclick: (e) => { addListItem(e.target.parentElement.previousElementSibling) }
+        }))
 
-          nestedContainer.dataset.template = JSON.stringify(parameters.template)
-          container.appendChild(controls)
-	      }
+        nestedContainer.dataset.template = JSON.stringify(parameters.template) 
 
         // Create the list items registered within the manifest
         for (const [i, item] of parameters.items.entries()) {
@@ -81,6 +80,7 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
         }
 
         container.appendChild(nestedContainer)
+        container.appendChild(controls)
         break
 
       default: 

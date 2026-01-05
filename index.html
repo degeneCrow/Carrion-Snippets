@@ -43,6 +43,8 @@
       ;
       style-src
         'self' 'unsafe-inline'
+        https://carrion.chat
+
         https://file.garden
         https://cdn.discordapp.com
         https://fonts.googleapis.com
@@ -67,7 +69,10 @@
         https://fonts.gstatic.com
       ;
   ">
-
+  
+  <!-- Steal the carrion css so that things look the most normal possible! -->
+  <link rel="stylesheet" href="https://carrion.chat/static/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="index.css">
 
   <script src="lib/handlebars-v4.7.8.js"></script>
@@ -81,9 +86,9 @@
 
 <form id="editor-form">
   <ul id="editor-container"></ul>
-  <button type="submit">Refresh Display</button>
+  <button class="btn btn-secondary" type="submit">Refresh Display</button>
+  <button class="btn btn-secondary" type="button" id="copyHtmlSnippet">Copy Displayed HTML</button>
 </form>
-<button type="submit" id="copyHtmlSnippet">Copy Displayed HTML</button>
 
 <div id="result-preview-container"></div>
 

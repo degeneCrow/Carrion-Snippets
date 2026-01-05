@@ -4,8 +4,10 @@
   flex-wrap: wrap;
 }
 
-#template-list-container > button {
+#template-list-container > .card {
   max-width: min(50%, 32em);
+  color: white;
+  margin: 0;
 }
 
 article p {
