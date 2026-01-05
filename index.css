@@ -1,18 +1,45 @@
+#template-control {
+  display:flex;
+  padding: 2rem 0;
+}
+@media (max-width: 768px) {
+  #template-control {
+    flex-direction: column;
+    gap:2rem
+  }
+}
+
 #template-list-container {
-  gap: 5px;
+  flex: 1 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  gap: 1% 0;
 }
 
 #template-list-container > .card {
-  max-width: min(50%, 32em);
-  color: white;
+  max-width: 49%;
   margin: 0;
+  color: white;
 }
 
 article p {
   white-space: pre-wrap;
 }
+
+#editor-form {flex: 1}
+#editor-container {margin:0}
+#editor-container > li{margin-bottom:2rem}
+#editor-container > li::marker {content:''}
+
+
+
+.list-controls {
+  display: inline;
+}
+
+
 
 #result-preview-container {
   background-color: #2a2a2a;
@@ -20,8 +47,4 @@ article p {
   max-width:1200px;
   margin:0 auto;
   padding:0 1rem;
-}
-
-.list-controls {
-  display: inline;
 }
