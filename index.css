@@ -5,7 +5,8 @@
 @media (max-width: 768px) {
   #template-control {
     flex-direction: column;
-    gap:2rem
+    gap:2rem;
+    padding: 2rem var(--space-base);
   }
 }
 
