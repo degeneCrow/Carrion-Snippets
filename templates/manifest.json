@@ -33,5 +33,12 @@
     "metadata": "templates/basic_gallery/metadata.json",
     "author": "degenerate bird",
     "homepage": "https://carrion.chat/character/degenerate%20bird"
+  },
+  {
+    "name": "Fullbody sidebar profile layout",
+    "description": "As opposed to most snippets here, this is almost a full profile for you to use!",
+    "metadata": "templates/fullbody-sidebar-profile/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
   }
 ]
