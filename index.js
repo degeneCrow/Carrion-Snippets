@@ -74,11 +74,17 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
 
         break
 
+      case 'textarea':
+        container.appendChild(Object.assign(document.createElement('textarea'), {
+          innerHTML: parameters.value,
+          name: `${idPrefix}.${optionID}`
+        })) 
+        break
       default: 
         container.appendChild(Object.assign(document.createElement('input'), {
           ...parameters,
           name: `${idPrefix}.${optionID}`
-        })) 
+        }))
         break
     }
 
