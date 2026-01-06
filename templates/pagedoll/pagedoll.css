@@ -1,0 +1,30 @@
+ @media screen and (max-aspect-ratio: 4/3) {
+  .pagedoll {
+    display: none !important;
+  }
+}
+
+.pagedoll {
+  background: none;
+  pointer-events: none;
+  position: fixed;
+  height: 0;
+  border: none;
+  padding: 0;
+}
+.pagedoll > summary {
+  pointer-events: auto;
+  border: none;
+  list-style: none;
+  transform: translate(-50%,0);
+  position: absolute;left:50%;
+  filter: drop-shadow(0 0 0.1em black);
+  color: var(--color-text-header);
+  padding: 0;
+}
+.pagedoll, .pagedoll > img {
+  margin: 0;
+  width: var(--doll-size);
+  padding: 0;
+}
+

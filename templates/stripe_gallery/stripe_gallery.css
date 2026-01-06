@@ -1,0 +1,35 @@
+
+.stripeGallery {
+  display: flex;
+  overflow-x : scroll;
+  --gallerySize: 400px;
+}
+.stripeGallery img {
+  margin: 0;
+  clip-path: polygon(40% 0%, 100% 0%, 60% 100%, -0.25% 100.5%);
+  width: var(--gallerySize);
+  object-fit: cover;
+  display: inline-block;
+  margin-left: calc(var(--gallerySize) * -0.4 - 1px);
+  border-radius: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.stripeGallery img:hover {
+  clip-path: none !important;
+  z-index: 100;
+  filter: drop-shadow(0 0 5px black);
+  object-fit: contain;
+  object-position: 50% 50% !important;
+}
+
+.stripeGallery img:first-of-type {
+  clip-path: polygon(0% 0%, 100% 0%, 46.3% 100%, -0.25% 100.5%);
+  width: calc(var(--gallerySize) * 0.75);
+  margin-left: 0;
+}
+.stripeGallery img:last-of-type {
+  clip-path: polygon(50% 0px, 100% 0%, 100% 100%, 0% 100%);
+  width: calc(var(--gallerySize) * 0.75);
+}
+

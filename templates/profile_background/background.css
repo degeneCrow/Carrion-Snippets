@@ -1,0 +1,12 @@
+.background {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  pointer-events: none;
+  background-color: var(--background-fallback);
+  z-index: -100;
+  top: 0;
+  left: 0;
+  background-image: var(--background-image);
+  background-size: cover; 
+}
