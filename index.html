@@ -3,6 +3,7 @@
 <head>
   <title>Carrion Snippet Gallery</title>
   <meta charset="utf-8" lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Content-Security-Policy"
     content="
       default-src 'self';
@@ -82,11 +83,18 @@
 
 <body>
 
-<div id="template-list-container"></div>
+<div id="disclaimer">
+  <p> This page is super WIP and will have nice styling sometime soon&trade;. For now, I just wanted to get basic functionality out the door.</p>
+  <p>If anything looks wrong, try a hard refresh (ctrl + shift + r) before submitting an issue, as you may have a file cached.</p>
+</div>
 
-<form id="editor-form">
-  <ul id="editor-container"></ul>
-</form>
+<div id="template-control" class="container">
+  <div id="template-list-container"></div>
+
+  <form id="editor-form">
+    <ul id="editor-container"></ul>
+  </form>
+</div>
 
 <!-- Carrion Profile Card HTML -->
 <div class="container">
@@ -121,7 +129,5 @@
 </div>
 
 
-<p style="margin-top: 2em;">This page is super WIP and will have nice styling sometime soon. For now, I just wanted to get basic functionality out the door.</p>
-<p>If anything looks wrong, try a hard refresh (ctrl + shift + r) before submitting an issue, as you may have a file cached.</p>
 </body>
 </html>
