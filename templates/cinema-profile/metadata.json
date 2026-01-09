@@ -1,0 +1,37 @@
+{
+  "template":"templates/cinema-profile/layout.hbs",
+
+  "options": {
+    "img-left":{
+      "type":"text",
+      "label":"Left-side image",
+      "value":"https://files.catbox.moe/h8e0fa.png"
+    },
+    "img-right":{
+      "type":"text",
+      "label":"Right-side image",
+      "value":"https://files.catbox.moe/h8e0fa.png"
+    },
+    "char.name":{
+      "type":"text",
+      "label":"Character name",
+      "value":"Characterus Examplus"
+    },
+    "char.title":{
+      "type":"text",
+      "label":"Character title",
+      "value":"The example character"
+    },
+    "char.quote":{
+      "type":"textarea",
+      "label":"Character quote",
+      "value":"The best quotes are always stolen from someone else"
+    },
+    "":{
+      "type":"text",
+      "label":"",
+      "value":""
+    }
+  }
+}
+
