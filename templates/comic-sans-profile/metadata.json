@@ -1,0 +1,74 @@
+{
+  "template": "templates/comic-sans-profile/layout.hbs",
+  "options": {
+    "title": {
+      "type": "text",
+      "label": "Character name/title",
+      "value": "Characterus Examplus"
+    },
+
+    "content": {
+      "type":"list",
+      "label":"Profile content",
+      "template":{
+        "title": {
+          "type": "text",
+          "label": "Title"
+        },
+        "text": {
+          "type": "textarea",
+          "label": "content"
+        }
+      },
+      "items":[
+        {
+          "title":"Who my character is...",
+          "text":"What does it matter who your character is? Most people will look at your characters' images you've linked below to see their appearance and whatnot; in most cases, people don't even read what is placed on your profile. For instance, are you even reading this?"
+        },
+        {
+          "title":"What my character wants...",
+          "text":"If people ignored the upper section, you know for sure they will ignore this one. After all, the kink list might be the better place to write all the things you're little muffin is looking for (or hoping to \"\"\"avoid\"\"\")"
+        }
+      ]
+    },
+
+    "sticker.src":{
+      "type":"text",
+      "label":"Character sticker",
+      "value":"https://files.catbox.moe/otxn87.png"
+    },
+
+    "gallery": {
+      "type": "list",
+      "label": "Image gallery",
+      "template": {
+        "src": {
+          "type": "text",
+          "label": "Image link"
+        },
+        "alt": {
+          "type": "text",
+          "label": "Image title"
+        }
+      },
+      "items": [
+        {
+          "src":"https://files.catbox.moe/on3s16.png",
+          "alt": ""
+        },
+        {
+          "src":"https://files.catbox.moe/on3s16.png",
+          "alt": ""
+        },
+        {
+          "src":"https://files.catbox.moe/on3s16.png",
+          "alt": ""
+        },
+        {
+          "src":"https://files.catbox.moe/on3s16.png",
+          "alt": ""
+        }
+      ]
+    }
+  }
+}

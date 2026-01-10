@@ -68,5 +68,12 @@
     "metadata": "templates/fullbody-sidebar-profile/metadata.json",
     "author": "Spierce",
     "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Comic Sans layout",
+    "description": "If you have a cutesy muffin you want to ERP getting brutally slamfucked - this might be your best bet",
+    "metadata": "templates/comic-sans-profile/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
   }
 ]
