@@ -1,0 +1,59 @@
+{
+  "template": "templates/detailed-character-card/card.hbs",
+  "options": {
+    "name": {
+      "type": "text",
+      "label": "Character name/title",
+      "value": "EXAMPLE CHAR"
+    },
+
+    "pfp":{
+      "type":"text",
+      "label":"Character icon",
+      "value":"https://files.catbox.moe/emprhc.png"
+    },
+
+    "quote":{
+      "type":"textarea",
+      "label":"Character quote",
+      "value":"This is most likely your character's impressions of the character that is described within this card; whether they like him or hate him, what important life lessons they have learned from observing them, etc.\n\nAlternatively, this can also be an observation of their character of this current one - their impressions, etc."
+    },
+
+    "descriptions": {
+      "type":"list",
+      "label":"Data fields",
+      "template":{
+        "title": {
+          "type": "text",
+          "label": "Title"
+        },
+        "text": {
+          "type": "text",
+          "label": "content"
+        }
+      },
+      "items":[
+        {
+          "title":"FIELD",
+          "text":"info"
+        },
+        {
+          "title":"FIELD",
+          "text":"info"
+        },
+        {
+          "title":"FIELD",
+          "text":"info"
+        },
+        {
+          "title":"FIELD",
+          "text":"info"
+        },
+        {
+          "title":"FIELD",
+          "text":"info"
+        }
+      ]
+    }
+  }
+}

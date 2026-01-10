@@ -49,6 +49,13 @@
     "homepage": "https://carrion.chat/character/Spierce"
   },
   {
+    "name": "Detailed character card",
+    "description": "Do you want something to represent an individual? Useful for relationship representation and the like.",
+    "metadata": "templates/detailed-character-card/metadata.json",
+    "author": "Mony",
+    "homepage": "https://carrion.chat/character/Mony/"
+  },
+  {
     "name": "Roleplay samples",
     "description": "Want to show off your writing chops to people? Use this nested dropdown",
     "metadata": "templates/writing-samples/metadata.json",
