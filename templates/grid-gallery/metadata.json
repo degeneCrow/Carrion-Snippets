@@ -1,0 +1,68 @@
+{
+  "template": "templates/grid-gallery/gallery.hbs",
+  "options": {
+    "title": {
+      "type": "text",
+      "label": "Dropdown title",
+      "value": "Gallery"
+    },
+    "images": {
+      "type": "list",
+      "label": "Images",
+      "template": {
+        "href": {
+          "type": "text",
+          "label": "src",
+          "value": ""
+        },
+        "alt": {
+          "type": "text",
+          "label": "Description",
+          "value": ""
+        }
+      },
+      "items": [
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        },
+        {
+          "href": "https://files.catbox.moe/tcsuz5.png",
+          "alt": ""
+        }
+      ]
+    }
+  }
+}
