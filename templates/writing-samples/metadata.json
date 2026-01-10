@@ -1,0 +1,40 @@
+{
+  "template": "templates/writing-samples/templates.hbs",
+  "options": {
+    "title": {
+      "type": "text",
+      "label": "Dropdown title",
+      "value": "My roleplay samples"
+    },
+    "examples": {
+      "type": "list",
+      "label": "Examples",
+      "template": {
+        "title": {
+          "type": "text",
+          "label": "Sample title",
+          "value": ""
+        },
+        "content": {
+          "type": "textarea",
+          "label": "Sample content",
+          "value": ""
+        }
+      },
+      "items": [
+        {
+          "title":"Oneliner",
+          "content": "Put your samples here."
+        },
+        {
+          "title":"Semi-paragraph",
+          "content": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis massa at nibh ullamcorper sollicitudin.\""
+        },
+        {
+          "title":"Paragraph",
+          "content": "\"Donec laoreet nibh ut cursus accumsan. Quisque ipsum ex, dignissim volutpat varius at, ultricies at odio. Vivamus a ultrices augue.\n\n\"Praesent ultrices viverra venenatis. Ut euismod sit amet nibh ac varius. Duis ut molestie dui, non rutrum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras nec rutrum risus.\""
+        }
+      ]
+    }
+  }
+}

@@ -49,6 +49,13 @@
     "homepage": "https://carrion.chat/character/Spierce"
   },
   {
+    "name": "Roleplay samples",
+    "description": "Want to show off your writing chops to people? Use this nested dropdown",
+    "metadata": "templates/writing-samples/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
     "name": "Cinema profile layout",
     "description": "As opposed to most snippets here, this is almost a full profile for you to use!",
     "metadata": "templates/cinema-profile/metadata.json",
