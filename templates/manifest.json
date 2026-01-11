@@ -21,13 +21,6 @@
     "homepage": "https://carrion.chat/character/Kayla"
   },
   {
-    "name": "Wikia template",
-    "description": "Do you have what feels like an entire wiki worth of info? Well, here's a wiki template for you! (or at least the right side...)",
-    "metadata": "templates/wiki/metadata.json",
-    "author": "degenerate bird",
-    "homepage": "https://carrion.chat/character/Lava%20Loaf"
-  },
-  {
     "name": "Basic gallery",
     "description": "Have a lot of images of your char? Care more of function over form? Well, then this dropdown gallery is for you!",
     "metadata": "templates/basic_gallery/metadata.json",
@@ -61,6 +54,13 @@
     "metadata": "templates/writing-samples/metadata.json",
     "author": "Spierce",
     "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Wikia template",
+    "description": "Do you have what feels like an entire wiki worth of info? Well, here's a wiki template for you! (or at least the right side...)",
+    "metadata": "templates/wiki/metadata.json",
+    "author": "degenerate bird",
+    "homepage": "https://carrion.chat/character/Lava%20Loaf"
   },
   {
     "name": "Cinema profile layout",
