@@ -26,9 +26,9 @@
 	  "label":"Property name"
 	},
         "value":{
-	  "type":"text",
-	  "label":"Value"
-	}
+          "type":"text",
+          "label":"Value"
+        }
       },
       "items":[
         {
