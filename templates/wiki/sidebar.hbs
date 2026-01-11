@@ -37,25 +37,13 @@
 <img src="{{image}}" />
 
 <table class="classcard"><tbody>
-<tr>
-  <th>Name</th>
-  <td>{{char.name}}</td>
-</tr>
 
+{{#each attributes}}
 <tr>
-  <th>Race</th>
-  <td>{{char.race}}</td>
+  <th>{{label}}</th>
+  <td>{{value}}</td>
 </tr>
-
-<tr>
-  <th>Species</th>
-  <td>{{char.species}}</td>
-</tr>
-
-<tr>
-  <th>Class</th>
-  <td>{{char.class}}</td>
-</tr>
+{{/each}}
 
 </tbody></table>
 
@@ -63,7 +51,7 @@
 
 <div class="col">
 
-And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot.
+{{content}}
 
 </div><!-- .col END -->
 </div><!-- #main END -->
