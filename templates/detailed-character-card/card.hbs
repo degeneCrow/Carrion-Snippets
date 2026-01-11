@@ -1,0 +1,87 @@
+<style>
+.detailed-char-card{
+  max-width:500px;
+  font-family:Times New Roman;
+  margin:1rem auto
+}
+
+.detailed-char-card .row{
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  display: flex;
+}
+
+.detailed-char-card .row>.col-l{
+  flex: 1 0 60%;
+  margin:.5rem;
+  padding:.25rem 0.5rem;
+  background:var(--color-border);
+  border-radius: var(--radius-sm);
+}
+.detailed-char-card .col-l h3{text-align:center}
+.detailed-char-card .col-l h3>span{
+  letter-spacing:3px;
+  margin:0 .5rem
+}
+
+.detailed-char-card .field-info{
+  display:flex;
+  justify-content:space-between;
+  margin:.25rem 0
+}
+
+.detailed-char-card .pfp{
+  flex:1 1 40%;
+  display:flex;
+  border-left:1px solid var(--color-border);
+}
+.detailed-char-card .pfp img{
+  margin:0;
+
+  object-fit:cover;
+  object-position:center;
+}
+
+.detailed-char-card>.quote{
+  font-family:verdana;
+  font-size:13px;
+  padding:1rem
+}
+
+.detailed-char-card .separator{
+  margin:.25rem;
+  border-top: 2px solid var(--color-surface)
+}
+</style>
+
+<div class="detailed-char-card">
+
+ <!--Main Box-->
+<div class="row">
+  <div class="col-l">
+     <!--Title-->
+     <h3>
+       &star;<span>{{name}}</span>&star;
+     </h3>
+
+     <!--Fields-->
+     <div>{{#each descriptions}}
+       <hr class="separator">
+       <p class="field-info">
+         <strong> &sup; {{title}} </strong>
+         <span> {{text}} </span>
+       </p>
+     {{/each}}</div>
+   </div>
+
+   <div class="pfp">
+     <img src="{{pfp}}">
+   </div>
+ </div>
+
+<details class="quote"><summary>A quote goes here.</summary>
+  {{quote}}
+</details>
+
+</div>

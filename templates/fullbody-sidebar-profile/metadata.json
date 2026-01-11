@@ -1,0 +1,60 @@
+{
+  "template": "templates/fullbody-sidebar-profile/layout.hbs",
+  "options": {
+    "quote": {
+      "type":"text",
+      "label":"Quote",
+      "value": "Type your quote here!"
+    },
+    "inline": {
+      "type":"text",
+      "label":"Inline / Main representation",
+      "value": "https://files.catbox.moe/9bcym2.png"
+    },
+    "char.name": {
+      "type":"text",
+      "label":"Character name",
+      "value": "Characterus Examplus"
+    },
+    "char.title": {
+      "type":"text",
+      "label":"Character title",
+      "value": "The example character"
+    },
+    "char.desc": {
+      "type":"textarea",
+      "label":"Character description",
+      "value": "Lorem ipsum dolor sit amet... You know the gist."
+    },
+    "images": {
+      "type":"list",
+      "label":"Thumbnails",
+      "template": {
+        "href": {
+          "type": "text",
+          "label": "src",
+          "value": ""
+        }
+      },
+      
+      "items": [
+        {
+          "href": "https://files.catbox.moe/6mgiw3.png"
+        },
+        {
+          "href": "https://files.catbox.moe/9bcym2.png"
+        },
+        {
+          "href": "https://files.catbox.moe/6mgiw3.png"
+        },
+        {
+          "href": "https://files.catbox.moe/9bcym2.png"
+        },
+        {
+          "href": "https://files.catbox.moe/6mgiw3.png"
+        }
+      ]
+    }
+
+  }
+}

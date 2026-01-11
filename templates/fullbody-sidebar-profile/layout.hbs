@@ -1,0 +1,61 @@
+<style>
+
+.quote{
+  font-size:1.5em;
+  font-family:times new roman;
+  font-weight:bold;
+  margin:auto;
+  text-align:center;
+}
+
+table#main {width:100%;margin:auto}
+table#main *{border:0}
+table#main .inline{width:40%}
+table#main .content{width:60%;text-align:center}
+table#main .separator{margin:10px auto;width:75%;border-bottom:1px solid white}
+
+table#main .content .title{
+  font-size:2em;
+  line-height:90%;
+  font-family:times new roman;
+  font-weight:bold;
+  margin:0
+}
+
+table#main .gallery {width:100%;height:0;margin:auto}
+table#main .gallery img {
+  width:100px;
+  height:100px;
+  margin:0 10px;
+  object-fit:cover
+}
+
+</style>
+
+
+
+<p class="quote">{{quote}}</p>
+
+<hr/>
+
+<table id="main"><tr>
+<td class="inline">
+  <img src="{{inline}}">
+</td>
+
+<td class="content">
+  <p class="title">{{char.name}}<br>{{char.title}}</p>
+
+<hr class="separator">
+  <div class="desc">{{char.desc}}</div>
+<hr class="separator">
+
+
+<div class="gallery">
+{{#each images}}{{#if href}}
+<img src="{{href}}">
+{{/if}}{{/each}}
+</div>
+
+</td>
+</tr></table>

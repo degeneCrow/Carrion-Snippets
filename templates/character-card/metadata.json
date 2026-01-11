@@ -1,0 +1,20 @@
+{
+  "template":"templates/character-card/card.hbs",
+  "options":{
+    "icon":{
+      "type":"text",
+      "label":"Character icon",
+      "value":"https://files.catbox.moe/6mgiw3.png"
+    },
+    "name":{
+      "type":"text",
+      "label":"Character name",
+      "value":"Exemplus Characterus"
+    },
+    "bio":{
+      "type":"text",
+      "label":"Description",
+      "value":"biobiobiobiobio"
+    }
+  }
+}

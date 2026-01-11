@@ -1,0 +1,70 @@
+<style>
+#cinema{width:1000px;margin:auto}
+
+#cinema .separator{
+  margin: 10px auto;
+  border-bottom: 1px solid white;
+}
+
+#cinema .col1,
+#cinema .col4 {width:200px}
+#cinema .col2,
+#cinema .col3 {width:600px}
+
+#cinema .heading,
+#cinema .section{
+  margin:0;
+  font-weight:bold;
+  font-family:times new roman;
+  line-height:110%;
+}
+#cinema .quote{font-style:italic;font-size:.9em}
+
+#cinema .heading{font-size:2em}
+#cinema .section{font-size:1.5em}
+
+.center{text-align:center}
+</style>
+
+<table id="cinema">
+  <tr>
+    <td class="col1">
+      <img src="{{img-left}}">
+    </td>
+    <td class="center" colspan="2">
+      <p class="heading">{{char.name}}<br>{{char.title}}</p>
+      <hr class="separator">
+      <p class="quote">{{char.quote}}</p>
+    </td>
+    <td class="col4">
+      <img src="{{img-right}}">
+    </td>
+  </tr>
+  <tr style="vertical-align:top">
+    <td class="col1">
+      <p class="section center">{{section1.title}}</p>
+      <hr class="separator">
+      <ul>{{#each section1.content}}
+        <li>{{text}}</li>
+      {{/each}}</ul>
+    </td>
+    <td class="col2 center">
+      <p class="section">{{section2.title}}</p>
+      <hr class="separator">
+      <p>{{section2.content}}</p>
+    </td>
+    <td class="col3 center">
+      <p class="section">{{section3.title}}</p>
+      <hr class="separator">
+      <p>{{section3.content}}</p>
+    </td>
+    <td class="col4">
+      <p class="section center">{{section4.title}}</p>
+      <hr class="separator">
+      <ul>{{#each section4.content}}
+        <li>{{text}}</li>
+      {{/each}}</ul>
+    </td>
+  </tr>
+</table>
+

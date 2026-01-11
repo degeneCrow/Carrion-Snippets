@@ -33,5 +33,54 @@
     "metadata": "templates/basic_gallery/metadata.json",
     "author": "degenerate bird",
     "homepage": "https://carrion.chat/character/degenerate%20bird"
+  },
+  {
+    "name": "Grid gallery",
+    "description": "Have a few same-size character images you want to display in a uniform grid? Then this gallery is made for you.",
+    "metadata": "templates/grid-gallery/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Simple character card",
+    "description": "Do you want something to represent an individual? Useful for hubs and the like.",
+    "metadata": "templates/character-card/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Detailed character card",
+    "description": "Do you want something to represent an individual? Useful for relationship representation and the like.",
+    "metadata": "templates/detailed-character-card/metadata.json",
+    "author": "Mony",
+    "homepage": "https://carrion.chat/character/Mony/"
+  },
+  {
+    "name": "Roleplay samples",
+    "description": "Want to show off your writing chops to people? Use this nested dropdown",
+    "metadata": "templates/writing-samples/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Cinema profile layout",
+    "description": "As opposed to most snippets here, this is almost a full profile for you to use!",
+    "metadata": "templates/cinema-profile/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Fullbody sidebar profile layout",
+    "description": "As opposed to most snippets here, this is almost a full profile for you to use!",
+    "metadata": "templates/fullbody-sidebar-profile/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Comic Sans layout",
+    "description": "If you have a cutesy muffin you want to ERP getting brutally slamfucked - this might be your best bet",
+    "metadata": "templates/comic-sans-profile/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
   }
 ]

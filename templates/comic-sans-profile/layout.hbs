@@ -1,0 +1,71 @@
+<style>
+#pcomic{
+  width:800px;
+  margin:auto;
+  padding:20px;
+}
+#pcomic,
+#pcomic~.gallery{
+  border:5px dashed white;
+  background-color:rgba(0, 0, 0, .25);
+}
+
+#pcomic .text .heading,
+#pcomic .text .section{
+  font-weight:bold;
+  margin:0;
+  font-family:Comic Sans Ms
+}
+#pcomic .text .heading{
+  font-size:2rem;
+  line-height:2rem;
+  margin-bottom:20px;
+  text-align:center
+}
+#pcomic .text .section{font-size:1.5rem;margin-bottom:-0.5em}
+
+#pcomic .text{position:relative}
+#pcomic .text img{
+  float:right;
+  height:80px
+}
+
+#pcomic .separator{
+  margin: 10px auto;
+  border:0;border-top: 2px dashed white;
+}
+
+#pcomic~.gallery{
+  width:800px;
+  padding:0;margin:auto;
+  border-top:0
+}
+#pcomic~.gallery td {border:0}
+#pcomic~.gallery td:not(:last-child) {
+  border-right: 5px dashed white
+}
+
+</style>
+
+<div id="pcomic">
+  <div class="text">
+    {{#if sticker.src}}<img src="{{sticker.src}}">{{/if}}
+    <p class="heading">{{title}}</p>
+    <hr class="separator" style="border-top-width:5px">
+
+    {{#each content}}
+      <p class="section">{{title}}</p>
+      <hr class="separator">
+      <p>{{text}}</p>
+    {{/each}}
+  </div>
+</div>
+
+<table class="gallery">
+{{#each gallery}}{{#if src}} 
+  <td>
+    <img src="{{src}}" title="{{alt}}"
+  </td>
+{{/if}}{{/each}}
+</table>
+
