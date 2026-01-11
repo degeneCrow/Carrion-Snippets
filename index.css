@@ -16,7 +16,8 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: flex-start;
-  gap: 1% 0;
+  gap: 5px;
+  overflow: scroll;
 }
 
 #template-list-container > .card {
