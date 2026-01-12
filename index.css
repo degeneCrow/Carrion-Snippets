@@ -1,3 +1,7 @@
+:root, :host {
+  white-space: pre-wrap;
+}
+
 #template-control {
   padding: 2rem 0;
 }
