@@ -3,14 +3,14 @@
 
 
 <style>
-.stripeGallery {
---gallerySize: {{size}}px;
-}
+  .stripeGallery {
+    --gallerySize: {{size}}px;
+  }
 </style>
 
 
 <div class="stripeGallery fullDescW">
-{{#each images}}
-<img style="object-position: {{offset}}%" src="{{src}}"> 
-{{/each}}
+  {{#each images}}
+    <img style="object-position: {{offset}}%" src="{{src}}"> 
+  {{/each}}
 </div>
