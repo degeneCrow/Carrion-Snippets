@@ -1,27 +1,21 @@
 #template-control {
-  display:flex;
   padding: 2rem 0;
-}
-@media (max-width: 768px) {
-  #template-control {
-    flex-direction: column;
-    gap:2rem;
-    padding: 2rem var(--space-base);
-  }
 }
 
 #template-list-container {
   flex: 1 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: flex-start;
   gap: 5px;
   overflow: scroll;
 }
 
 #template-list-container > .card {
-  max-width: 49%;
+  max-width: 400px;
+  min-width: 300px;
+  flex-grow: 1;
   margin: 0;
   color: white;
 }
@@ -50,3 +44,4 @@ article p {
   margin:0 auto;
   padding:0 1rem;
 }
+
