@@ -2,7 +2,7 @@
   "template": "templates/wiki/sidebar.hbs",
   "options": {
     "theme-color": {
-      "type":"text",
+      "type":"color",
       "label":"Theme color",
       "value": "#fa9431"
     },
@@ -16,25 +16,44 @@
       "label":"Reference image",
       "value": "https://static.f-list.net/images/charinline/ed/13/ed132e0a4466632c4aff46947bab4ebd32ced5ad.png"
     },
-    "char.name": {
-      "type":"text",
-      "label":"Character name",
-      "value": "Loaf"
+
+    "attributes":{
+      "type":"list",
+      "label":"Wiki attributes",
+      "template":{
+        "label":{
+	  "type":"text",
+	  "label":"Property name"
+	},
+        "value":{
+          "type":"text",
+          "label":"Value"
+        }
+      },
+      "items":[
+        {
+          "label":"Name",
+          "value": "Loaf"
+        },
+        {
+          "label":"Race",
+          "value": "Fire elemental"
+        },
+        {
+          "label":"Species",
+          "value": "Goo girl"
+        },
+        {
+          "label":"Class",
+          "value": "Cook"
+        }
+      ]
     },
-    "char.race": {
-      "type":"text",
-      "label":"Character race",
-      "value": "Fire elemental"
-    },
-    "char.species": {
-      "type":"text",
-      "label":"Character species",
-      "value": "Goo girl"
-    },
-    "char.class": {
-      "type":"text",
-      "label":"Character class",
-      "value": "Cook"
+
+    "content":{
+      "type":"textarea",
+      "label":"Left area content",
+      "value":"And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot.\n\nSadly, the fun markdown or custom HTML will not work in this textbox; it's cleaned before being inserted. But in Carrion, even multilines like these will be properly depicted in separate lines unlike how they are in the preview."
     }
   }
 }
