@@ -20,6 +20,8 @@ DOMPurify.addHook('uponSanitizeElement', function(node, data) {
   }
 });
 
+function removeIndent(input) { return input.split('\n').map(line => line.trim()).join('\n') }
+
 
 async function fetchJson(url) {
   const response = await fetch(url);
@@ -130,7 +132,7 @@ function updatePreview(data) {
 
   const wrap = document.createElement('div');
   wrap.className = 'shadow-content';
-  wrap.innerHTML = DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS);
+  wrap.innerHTML = removeIndent(DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS));
 
   SHADOW_DOM.appendChild(link);
   SHADOW_DOM.appendChild(wrap);
