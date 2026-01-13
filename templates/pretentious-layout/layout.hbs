@@ -1,0 +1,21 @@
+<style>
+#pretentious .query{
+  margin: 40vh auto;
+  width: fit-content;
+  font-family: serif;
+  font-weight: bold;
+  text-align:center
+}
+#pretentious .query{}
+</style>
+
+<div id="pretentious">
+<div class="query">
+{{query}}
+<ul>{{#each query.attr}}
+  <li>{{attribute}}</li>
+{{/each}}</ul>
+
+{{query.complicate}}
+</div>
+</div>

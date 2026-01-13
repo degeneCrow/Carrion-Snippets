@@ -1,0 +1,48 @@
+{
+  "template": "templates/pretentious-layout/layout.hbs",
+  "options": {
+    "image": {
+      "type":"text",
+      "label":"Inline above dropdown",
+      "value": "https://static.f-list.net/images/charinline/a9/55/a955c6462eaf10fdbe0c054223cd1e0fe10f29e4.png"
+    },
+
+    "query": {
+      "type":"text",
+      "label":"Initial question",
+      "value": "what do you get, when you have a man who is"
+    },
+    "query.attr":{
+      "type":"list",
+      "label":"Attributes",
+      "template":{
+        "attribute":{
+	  "type":"text",
+	  "label":"attribute"
+	}
+      },
+      "items":[
+        {
+          "attribute":"impeccably dressed no matter the occasion"
+        },
+        {
+          "attribute":"called 'daddy' by everyone's mother and daughter"
+        },
+        {
+          "attribute":"in pursuit of getting a demon girl harem for himself"
+        }
+      ]
+    },
+    "query.complicate":{
+      "type":"textarea",
+      "label":"3 line query",
+      "value":"something something"
+    },
+
+    "content":{
+      "type":"textarea",
+      "label":"Dropdown content",
+      "value":"And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot.\n\nSadly, the fun markdown or custom HTML will not work in this textbox; it's cleaned before being inserted. But in Carrion, even multilines like these will be properly depicted in separate lines unlike how they are in the preview."
+    }
+  }
+}

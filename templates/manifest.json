@@ -70,6 +70,13 @@
     "homepage": "https://carrion.chat/character/Lava%20Loaf"
   },
   {
+    "name": "\"What do you get\" template",
+    "description": "Do you want to tease your characer's viewer with a small paragraph, followed by a semi-impressive inline that stands above a dropdown of more text? Then this layout is for you!",
+    "metadata": "templates/pretentious-layout/metadata.json",
+    "author": "degenerate bird",
+    "homepage": "https://carrion.chat/character/degenerate%20bird"
+  },
+  {
     "name": "Cinema profile layout",
     "description": "As opposed to most snippets here, this is almost a full profile for you to use!",
     "metadata": "templates/cinema-profile/metadata.json",
