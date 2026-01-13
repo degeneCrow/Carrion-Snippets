@@ -26,7 +26,7 @@
           "attribute":"impeccably dressed no matter the occasion"
         },
         {
-          "attribute":"called 'daddy' by everyone's mother and daughter"
+          "attribute":"called \"daddy\" by everyone's mother and daughter"
         },
         {
           "attribute":"in pursuit of getting a demon girl harem for himself"
@@ -36,10 +36,15 @@
     "query.complicate":{
       "type":"textarea",
       "label":"3 line query",
-      "value":"something something"
+      "value":""
     },
 
-    "content":{
+    "dropdown.title":{
+      "type":"text",
+      "label":"Dropdown title",
+      "value": "want to leave your humanity behind?"
+    },
+    "dropdown.content":{
       "type":"textarea",
       "label":"Dropdown content",
       "value":"And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot.\n\nSadly, the fun markdown or custom HTML will not work in this textbox; it's cleaned before being inserted. But in Carrion, even multilines like these will be properly depicted in separate lines unlike how they are in the preview."

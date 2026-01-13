@@ -4,18 +4,33 @@
   width: fit-content;
   font-family: serif;
   font-weight: bold;
-  text-align:center
+  text-align:left
 }
-#pretentious .query{}
+#pretentious .query li{
+  list-style-type: '—';
+  text-align:left;
+  margin: 0 0 0 3em;
+  padding: 0 0 0 1em;
+}
 </style>
 
 <div id="pretentious">
+
 <div class="query">
 {{query}}
 <ul>{{#each query.attr}}
   <li>{{attribute}}</li>
 {{/each}}</ul>
+</div>
+
+<div style="text-align:center">
 
 {{query.complicate}}
 </div>
+
+<img src="{{image}}" />
 </div>
+<details><summary>{{dropdown.title}}</summary>
+
+{{content}}
+</details>
