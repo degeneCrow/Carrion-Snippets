@@ -56,6 +56,13 @@
     "homepage": "https://carrion.chat/character/Spierce"
   },
   {
+    "name": "Zine ad template",
+    "description": "Is your character a callback to the 80s-00s and a consumer product that would have been advertised in tech zines? Then this profile layout is for you!",
+    "metadata": "templates/zine-ad/metadata.json",
+    "author": "degenerate bird",
+    "homepage": "https://carrion.chat/character/degenerate%20bird"
+  },
+  {
     "name": "Wikia template",
     "description": "Do you have what feels like an entire wiki worth of info? Well, here's a wiki template for you! (or at least the right side...)",
     "metadata": "templates/wiki/metadata.json",

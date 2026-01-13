@@ -1,0 +1,56 @@
+<style>
+#zine-ad {
+  background-image: url({{pattern}});
+  padding:1rem;
+
+  display:flex;flex-direction:column
+}
+
+#zine-ad,
+#zine-ad p{
+  color: black;
+  font-family:serif;
+  font-size:18px;
+  text-align:justify;
+  text-indent:1em;
+}
+#zine-ad h1{font-size:2em}
+#zine-ad h3{font-size:1.5em}
+#zine-ad h1,
+#zine-ad h3{
+  color: black;
+  margin:0;padding:0;
+  border:0;
+  text-align:center;
+}
+
+#zine-ad .blerb {display:flex; gap:2em}
+#zine-ad .blerb .text {column-count:2; column-gap:2em; width:66%}
+#zine-ad .blerb .disc {width:33%}
+#zine-ad .blerb .disc .box {
+  text-indent:0;
+  border:1px solid black;
+  padding:8px;
+  background:#ebd58288;
+}
+</style>
+
+<div id="zine-ad">
+
+<h1>{{adblerb.top}}</h1>
+<img src="{{image}}" />
+<h1>{{adblerb.bot}}</h1>
+
+<div class="blerb">
+<div class="text">
+
+{{content.main}}
+
+</div>
+<div class="disc"><div class="box">
+
+{{content.warn}}
+
+</div></div>
+
+</div>
