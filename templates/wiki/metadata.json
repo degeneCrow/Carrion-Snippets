@@ -53,7 +53,7 @@
     "content":{
       "type":"textarea",
       "label":"Left area content",
-      "value":"And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot.\n\nSadly, the fun markdown or custom HTML will not work in this textbox; it's cleaned before being inserted. But in Carrion, even multilines like these will be properly depicted in separate lines unlike how they are in the preview."
+      "value":"And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot."
     }
   }
 }

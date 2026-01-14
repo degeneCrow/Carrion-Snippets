@@ -32,7 +32,7 @@
     "content.warn": {
       "type":"textarea",
       "label":"Disclaimer content",
-      "value":"### Disclaimer title\n\nSo I was rather lazy, and just put the basic auto-generated Lorem Ipsum in the main content. Sue me if you want.\n\nBut like with the other templates that use a text-area, this isn't going to turn multilines or markdown into HTML. Still, if you write the markdown here and copy it into Carrion, it should render swimmingly."
+      "value":"### Disclaimer title\n\nSo I was rather lazy, and just put the basic auto-generated Lorem Ipsum in the main content. Sue me if you want."
     }
   }
 }
