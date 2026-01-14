@@ -132,7 +132,7 @@ function updatePreview(data) {
 
   const wrap = document.createElement('div');
   wrap.className = 'shadow-content';
-  wrap.innerHTML = removeIndent(DOMPurify.sanitize(currentTemplate(data), DOMPURIFY_OPTS));
+  wrap.innerHTML = removeIndent(DOMPurify.sanitize(marked.parse(currentTemplate(data)), DOMPURIFY_OPTS));
 
   SHADOW_DOM.appendChild(link);
   SHADOW_DOM.appendChild(wrap);
