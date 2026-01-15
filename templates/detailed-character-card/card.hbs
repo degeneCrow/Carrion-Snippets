@@ -62,7 +62,7 @@
   <div class="col-l">
      <!--Title-->
      <h3>
-       &star;<span>{{name}}</span>&star;
+       &star;<span>{{{name}}}</span>&star;
      </h3>
 
      <!--Fields-->
@@ -70,18 +70,19 @@
        <hr class="separator">
        <p class="field-info">
          <strong> &sup; {{title}} </strong>
-         <span> {{text}} </span>
+         <span> {{{text}}} </span>
        </p>
      {{/each}}</div>
    </div>
 
    <div class="pfp">
-     <img src="{{pfp}}">
+     <img src="{{{pfp}}}">
    </div>
  </div>
 
 <details class="quote"><summary>A quote goes here.</summary>
-  {{quote}}
+
+  {{{quote}}}
 </details>
 
 </div>

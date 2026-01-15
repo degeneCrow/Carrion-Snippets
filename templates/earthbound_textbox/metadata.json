@@ -1,0 +1,20 @@
+{
+  "template": "templates/earthbound_textbox/textbox.hbs",
+  "options": {
+    "bg": {  
+      "type": "color", 
+      "label": "Background Colour",
+      "value": "#36103A"
+    },
+    "fg": {  
+      "type": "color", 
+      "label": "Border Colour",
+      "value": "#FFA3BA"
+    },
+    "content": {  
+      "type": "textarea", 
+      "label": "Contents",
+      "value": "Hello! This is a textbox!"
+    }
+  }
+}

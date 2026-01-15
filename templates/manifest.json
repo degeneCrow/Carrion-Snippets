@@ -96,5 +96,19 @@
     "metadata": "templates/comic-sans-profile/metadata.json",
     "author": "Spierce",
     "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
+    "name": "Earthbound Textbox",
+    "description": "A dialogue box, compatible with being sent in chat, stylized to resemble one from earthbound.",
+    "metadata": "templates/earthbound_textbox/metadata.json",
+    "author": "Twiangle",
+    "homepage": ""
+  },
+  {
+    "name": "Pokemon Trainer Card",
+    "description": "Show off your collection of pokemon on your profile!",
+    "metadata": "templates/pokemon_trainer/metadata.json",
+    "author": "Simon Blackquill",
+    "homepage": "https://carrion.chat/character/Simon Blackquill"
   }
 ]

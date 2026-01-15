@@ -1,0 +1,42 @@
+{
+  "template": "templates/pokemon_trainer/trainer.hbs",
+  "options": {
+    "name": {  
+      "type": "text", 
+      "label": "Trainer Name",
+      "value": "Steve"
+    },
+    "bio": {  
+      "type": "textarea", 
+      "label": "Biography",
+      "value": ""
+    },
+    "trainer_alt": {  
+      "type": "text", 
+      "label": "Trainer Alt Text",
+      "value": "Steve"
+    },
+    "trainer_src": {  
+      "type": "text", 
+      "label": "Trainer Image",
+      "value": ""
+    },
+    "pokemon": { 
+      "type": "list",
+      "label": "Pokemon", 
+      "template": {
+        "src": {
+          "type": "text",
+          "value": ""
+        },
+        "alt": {
+          "type": "text",
+          "label": "Pokemon Name",
+          "value": ""
+        } 
+      },
+      "items": [
+      ]
+    }
+  }
+}

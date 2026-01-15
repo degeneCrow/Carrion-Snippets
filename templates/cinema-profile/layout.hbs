@@ -32,37 +32,37 @@
       <img src="{{img-left}}">
     </td>
     <td class="center" colspan="2">
-      <p class="heading">{{char.name}}<br>{{char.title}}</p>
+      <p class="heading">{{{char.name}}}<br>{{{char.title}}}</p>
       <hr class="separator">
-      <p class="quote">{{char.quote}}</p>
+      <p class="quote">{{{char.quote}}}</p>
     </td>
     <td class="col4">
-      <img src="{{img-right}}">
+      <img src="{{{img-right}}}">
     </td>
   </tr>
   <tr style="vertical-align:top">
     <td class="col1">
-      <p class="section center">{{section1.title}}</p>
+      <p class="section center">{{{section1.title}}}</p>
       <hr class="separator">
       <ul>{{#each section1.content}}
-        <li>{{text}}</li>
+        <li>{{{text}}}</li>
       {{/each}}</ul>
     </td>
     <td class="col2 center">
-      <p class="section">{{section2.title}}</p>
+      <p class="section">{{{section2.title}}}</p>
       <hr class="separator">
-      <p>{{section2.content}}</p>
+      <p>{{{section2.content}}}</p>
     </td>
     <td class="col3 center">
-      <p class="section">{{section3.title}}</p>
+      <p class="section">{{{section3.title}}}</p>
       <hr class="separator">
-      <p>{{section3.content}}</p>
+      <p>{{{section3.content}}}</p>
     </td>
     <td class="col4">
-      <p class="section center">{{section4.title}}</p>
+      <p class="section center">{{{section4.title}}}</p>
       <hr class="separator">
       <ul>{{#each section4.content}}
-        <li>{{text}}</li>
+        <li>{{{text}}}</li>
       {{/each}}</ul>
     </td>
   </tr>
