@@ -1,0 +1,53 @@
+{
+  "template": "templates/pretentious-layout/layout.hbs",
+  "options": {
+    "image": {
+      "type":"text",
+      "label":"Inline above dropdown",
+      "value": "https://static.f-list.net/images/charinline/a9/55/a955c6462eaf10fdbe0c054223cd1e0fe10f29e4.png"
+    },
+
+    "query": {
+      "type":"text",
+      "label":"Initial question",
+      "value": "what do you get, when you have a man who is"
+    },
+    "attributes":{
+      "type":"list",
+      "label":"Attributes",
+      "template":{
+        "text":{
+	  "type":"text",
+	  "label":"attribute"
+	}
+      },
+      "items":[
+        {
+          "text":"impeccably dressed no matter the occasion"
+        },
+        {
+          "text":"called \"daddy\" by everyone's mother and daughter"
+        },
+        {
+          "text":"in pursuit of getting a demon girl harem for himself"
+        }
+      ]
+    },
+    "complication": {
+      "type":"textarea",
+      "label":"3-line complication",
+      "value":"and toss in a three-bodied, chaos-loving guardian beast in his path\n\nwhose unpredictability is as vast as its hunger for destruction\n\narmed with a little e x t r a that makes them \"unfit for sex\"?"
+    },
+
+    "dropdown.title":{
+      "type":"text",
+      "label":"Dropdown title",
+      "value": "want to leave your humanity behind?"
+    },
+    "dropdown.content":{
+      "type":"textarea",
+      "label":"Dropdown content",
+      "value":"And on this side you can do whatever; write whatever texts you want, use whatever headings - this is just placeholder stuff you can play around with later on your own in the Carrion live editor and whatnot.\n\nSadly, the fun markdown or custom HTML will not work in this textbox; it's cleaned before being inserted. But in Carrion, even multilines like these will be properly depicted in separate lines unlike how they are in the preview."
+    }
+  }
+}
