@@ -101,8 +101,8 @@
     "name": "Earthbound Textbox",
     "description": "A dialogue box, compatible with being sent in chat, stylized to resemble one from earthbound.",
     "metadata": "templates/earthbound_textbox/metadata.json",
-    "author": "Twiangle",
-    "homepage": ""
+    "author": "Simon Blackquill",
+    "homepage": "https://carrion.chat/character/Simon Blackquill"
   },
   {
     "name": "Pokemon Trainer Card",
