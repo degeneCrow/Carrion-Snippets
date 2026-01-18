@@ -1,0 +1,92 @@
+{
+  "template": "templates/concise-box-profile/layout.hbs",
+  "options": {
+    "color.text":{
+      "type": "color",
+      "label": "Text color",
+      "value": "#fff"
+    },
+    "color.accent":{
+      "type": "color",
+      "label": "Accent color",
+      "value": "#bf4223"
+    },
+
+    "bg.img": {
+      "type": "text",
+      "label": "Background image",
+      "value": "https://file.garden/Z_fuvw8HS2YH3EVO/manyandone.png"
+    },
+    "bg.color1":{
+      "type": "color",
+      "label": "Background backup color",
+      "value": "#000"
+    },
+    "bg.color2":{
+      "type": "color",
+      "label": "Background backup color 2",
+      "value": "#2a2a2a"
+    },
+
+    "title": {
+      "type": "text",
+      "label": "Character name",
+      "value": "CHARACTERUS EXAMPLUS"
+    },
+    "subtitle": {
+      "type": "text",
+      "label": "Subtitle",
+      "value": "example character"
+    },
+
+    "info": {
+      "type":"list",
+      "label":"Characteristics",
+      "template":{
+        "title": {
+          "type": "text",
+          "label": "Title"
+        },
+        "text": {
+          "type": "text",
+          "label": "content"
+        }
+      },
+      "items":[
+        {
+          "title":"pronouns",
+          "text":"___"
+        },
+        {
+          "title":"age",
+          "text":"___"
+        },
+        {
+          "title":"gender",
+          "text":"___"
+        },
+        {
+          "title":"orientation",
+          "text":"___"
+        },
+        {
+          "title":"philosophy",
+          "text":"___"
+        }
+      ]
+    },
+
+    "content": {
+      "type": "textarea",
+      "label": "Main text area",
+      "value": "BIO PARAGRAPH ONE. Describe the character, concept, or persona here.\n\nBIO PARAGRAPH TWO. Expand on personality, history, or themes.\n\nOPTIONAL FINAL NOTE, DISCLAIMERS, OR META INFORMATION.\n\nThis part is scrollable, so don't worry if you write too much."
+    },
+
+    "footer": {
+      "type": "text",
+      "label": "Footer",
+      "value": "[ footer text / quote / credit ]"
+    }
+
+  }
+}

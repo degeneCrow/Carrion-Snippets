@@ -1,0 +1,82 @@
+<style>
+#concise-box{
+  display:flex;flex-direction:column;gap:1em;
+  width:550px;height:535px;
+  font-family:'Courier New',monospace;font-size:14px;
+  line-height: 1.5;
+  color:{{color.text}};
+
+  background: url('{{bg.img}}') center/cover, {{bg.color1}};
+  border: 4px solid {{color.accent}};
+  margin:0 auto;padding: 2em;
+  box-sizing:border-box
+}
+
+#concise-box p{margin:0}
+
+#concise-box .box{
+  border:2px solid {{color.accent}};
+}
+#concise-box .box.dark{
+  padding:0.5em;
+  background:rgba(from {{bg.color1}} r g b / 0.9)
+}
+#concise-box .box.light{
+  padding:1em;
+  background:rgba(from {{bg.color2}} r g b / 0.9)
+}
+
+#concise-box .header,
+#concise-box .footer{text-align:center}
+#concise-box .header>h2{
+  margin:0;
+  font-size:26px;
+  color: {{color.accent}};
+  letter-spacing: 3px;
+}
+
+#concise-box .info{
+  display:flex;flex-wrap:wrap;gap:1em;
+  justify-content:center;
+}
+#concise-box .info>strong{color:{{color.accent}} }
+
+#concise-box .bio{
+  flex-grow:1;overflow-y:auto;
+  text-align:justify
+}
+#concise-box .bio>p{margin-bottom:0.75em}
+</style>
+
+
+
+
+<div id="concise-box">
+
+<!-- header -->
+<div class="header box dark">
+  <h2>{{title}}</h2>
+  <p>{{subtitle}}</p>
+</div>
+
+<!-- basic info -->
+<div class="info box light">{{#each info}}
+
+  <strong>{{title}}:</strong>{{text}}
+{{/each}}</div>
+
+<!-- bio -->
+<div class="bio box light">
+
+{{content}}
+</div>
+
+<!-- footer -->
+<div class="footer box dark">
+
+{{footer}}
+</div>
+
+</div>
+</div>
+
