@@ -1,0 +1,139 @@
+<style>
+#flowchart-layout{
+  width:750px;box-sizing:border-box;margin:0 auto;
+  font-family: 'Courier New', monospace;
+  font-size:16px;
+
+  background: {{bg.color1}};
+  border: 4px solid {{color.accent}}; 
+}
+
+#flowchart-layout p,
+#flowchart-layout h2{margin:0;padding:0}
+
+#flowchart-layout .subdued{color:{{color.subdued}} }
+
+#flowchart-layout .header{
+  font-size:12px;
+  display:flex;flex-direction:column;align-items:center;
+  gap:1em;padding:2em 0;
+}
+#flowchart-layout .header>.title{letter-spacing:0.5em}
+#flowchart-layout .header>h2{
+  color:{{color.accent}};
+  font-size:2.5em;letter-spacing:0.2em;
+}
+#flowchart-layout .header>em{letter-spacing:0.025em}
+
+#flowchart-layout .info{
+  background:{{bg.color2}};
+  display:flex;justify-content:center;
+  padding:0.5em 0;
+  line-height:1;letter-spacing:2px
+}
+#flowchart-layout .info>*{
+  padding:0 2em;
+  border-right:1px solid {{color.text}}
+}
+#flowchart-layout .info>*:last-child{border-right:0}
+
+#flowchart-layout .chart{
+  display:flex;flex-wrap:nowrap;
+  align-items:center;justify-content:center;gap:8px;
+
+  padding:10px;
+  border-bottom:2px solid #333;
+}
+
+#flowchart-layout .bio{
+  padding:1em 2em;
+  text-align:justify;
+}
+#flowchart-layout .bio p{margin: 0 0 1em 0}
+
+#flowchart-layout .section{
+  background-color:rgba(from {{color.accent}} r g b / 0.3);
+  padding:1em 2em;
+  border: 2px solid #2a2a2a;
+}
+#flowchart-layout .section h4{
+  margin:0;
+  font-size:1rem;font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+#flowchart-layout .section p{
+  color:#aaa;margin:1em 0 0 0;
+  text-align:justify;
+}
+
+#flowchart-layout .footer{text-align:center}
+#flowchart-layout .footer .m{
+  letter-spacing:4px;color:{{color.accent}};
+}
+#flowchart-layout .footer .s{
+  font-size:0.8em;color:{{color.subdued}}
+}
+</style>
+
+
+
+
+<div id="flowchart-layout">
+
+<!-- header -->
+<div class="header">
+  <div class="title subdued">{{header.title}}</div>
+  <h2>{{header.name}}</h2>
+  <em>{{header.quote}}</em>
+</div>
+
+<!-- basic info bar -->
+<div class="info">
+{{#each info}}
+  {{text}}
+{{/each}}</div>
+
+
+
+
+
+<!-- horizontal flowchart section -->
+<div class="chart">
+<div style="border: 1px solid #BF4223; padding: 6px 10px; font-size: 15px; color: #BF4223; letter-spacing: 1px; text-align: center;">SOMETHING'S<BR>NOT RIGHT</div>
+<div style="color: #444; font-size: 30px;">→</div>
+<div style="border: 1px solid #555; padding: 6px 10px; font-size: 14px; color: #999; background: rgba(191, 66, 35, 0.1); text-align: center;">ACTION</div>
+<div style="color: #444; font-size: 30px;">→</div>
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<div style="border: 1px solid #333; padding: 4px 8px; font-size: 14px; color: #999; background: #0d0d0d; text-align: center;">USE A BR TO<BR>BREAK THESE UP</div>
+<div style="border: 1px solid #333; padding: 4px 8px; font-size: 14px; color: #999; background: #0d0d0d; text-align: center;">SO THEY DON'T<BR>GET TOO LONG</div>
+</div>
+<div style="color: #444; font-size: 30px;">→</div>
+<div style="border: 1px solid #BF4223; padding: 6px 10px; font-size: 15px; color: #BF4223; background: #0d0d0d; text-align: center;">THE SAME OUTCOME<BR>COMES TO PASS</div>
+</div>
+
+
+
+
+
+<!-- main bio section -->
+<div class="bio">
+{{content}}
+</div>
+
+<!-- secondary info section -->
+<div>{{#each sections}}
+  <div class="section">
+    <h4>{{title}}</h4>
+
+    {{content}}
+  </div>
+{{/each}}</div>
+
+<div class="footer">
+  <p class="m">{{footer.line}}</p>
+  <p class="s">{{footer.credit}}</p>
+</div>
+
+</div>
+
