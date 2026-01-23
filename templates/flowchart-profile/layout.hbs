@@ -4,14 +4,20 @@
   font-family: 'Courier New', monospace;
   font-size:16px;
 
-  background: {{bg.color1}};
-  border: 4px solid {{color.accent}}; 
+  --bg1:{{background.color1}};
+  --bg2:{{background.color2}};
+  --colm:{{color.text}};
+  --cols:{{color.subdued}};
+  --cola:{{color.accent}};
+
+  background: var(--bg1);
+  border: 4px solid var(--cola); 
 }
 
 #flowchart-layout p,
 #flowchart-layout h2{margin:0;padding:0}
 
-#flowchart-layout .subdued{color:{{color.subdued}} }
+#flowchart-layout .subdued{color:var(--cols) }
 
 #flowchart-layout .header{
   font-size:12px;
@@ -20,20 +26,20 @@
 }
 #flowchart-layout .header>.title{letter-spacing:0.5em}
 #flowchart-layout .header>h2{
-  color:{{color.accent}};
+  color:var(--cola);
   font-size:2.5em;letter-spacing:0.2em;
 }
 #flowchart-layout .header>em{letter-spacing:0.025em}
 
 #flowchart-layout .info{
-  background:{{bg.color2}};
+  background:var(--bg2);
   display:flex;justify-content:center;
   padding:0.5em 0;
   line-height:1;letter-spacing:2px
 }
 #flowchart-layout .info>*{
   padding:0 2em;
-  border-right:1px solid {{color.text}}
+  border-right:1px solid var(--colm)
 }
 #flowchart-layout .info>*:last-child{border-right:0}
 
@@ -52,7 +58,7 @@
 #flowchart-layout .bio p{margin: 0 0 1em 0}
 
 #flowchart-layout .section{
-  background-color:rgba(from {{color.accent}} r g b / 0.3);
+  background-color:rgba(from var(--cola) r g b / 0.3);
   padding:1em 2em;
   border: 2px solid #2a2a2a;
 }
@@ -67,12 +73,12 @@
   text-align:justify;
 }
 
-#flowchart-layout .footer{text-align:center}
+#flowchart-layout .footer{text-align:center;padding:1em}
 #flowchart-layout .footer .m{
-  letter-spacing:4px;color:{{color.accent}};
+  letter-spacing:4px;color:var(--cola);
 }
 #flowchart-layout .footer .s{
-  font-size:0.8em;color:{{color.subdued}}
+  font-size:0.8em;color:var(--cols)
 }
 </style>
 

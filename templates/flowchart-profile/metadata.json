@@ -76,7 +76,7 @@
     },
     "sections": {
       "type":"list",
-      "label":"Characteristics",
+      "label":"Sections",
       "template":{
         "title": {
           "type": "text",
