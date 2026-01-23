@@ -104,6 +104,40 @@
       "type": "text",
       "label": "Footer Credit",
       "value": "translation or subtext"
+    },
+
+    "chart.start": {
+      "type": "text",
+      "label": "Flowchart step 1",
+      "value": "Inciting incident"
+    },
+    "chart.cont": {
+      "type": "text",
+      "label": "Flowchart step 2",
+      "value": "action"
+    },
+    "chart.choice": {
+      "type": "list",
+      "label": "Flowchart step(s) 3",
+      "template":{
+        "choice": {
+          "type": "text",
+          "label": "Option"
+        }
+      },
+      "items":[
+        {
+          "choice":"Possible choice no.1"
+        },
+        {
+          "choice":"Alternative choice no.2"
+        }
+      ]
+    },
+    "chart.end": {
+      "type": "text",
+      "label": "Flowchart step 4",
+      "value": "The same outcome, no matter the choice"
     }
 
   }
