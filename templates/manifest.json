@@ -1,114 +1,130 @@
 [
   {
     "name": "Stripe Gallery",
-    "description": "Horizontal scrolling gallery for any number of images\nNote: List editing currently not supported, so this template doesn't exactly work properly.",
+    "description": "Horizontal scrolling gallery for any number of images.",
     "metadata": "templates/stripe_gallery/metadata.json",
     "author": "Kayla",
-    "homepage": "https://carrion.chat/character/Kayla"
+    "homepage": "https://carrion.chat/character/Kayla",
+    "categories":["snippet","images","gallery"]
   },
   {
     "name": "Simple Profile Background",
     "description": "A simple, easily configurable, auto-updating background image for your profile",
     "metadata": "templates/profile_background/metadata.json",
     "author": "Kayla",
-    "homepage": "https://carrion.chat/character/Kayla"
+    "homepage": "https://carrion.chat/character/Kayla",
+    "categories":["snippet","images"]
   },
   {
     "name": "Pagedolls",
     "description": "Ever wanted a lil picture of you standing on the browser? Here's how to do it!",
     "metadata": "templates/pagedoll/metadata.json",
     "author": "Kayla",
-    "homepage": "https://carrion.chat/character/Kayla"
+    "homepage": "https://carrion.chat/character/Kayla",
+    "categories":["snippet","images"]
   },
   {
     "name": "Basic gallery",
     "description": "Have a lot of images of your char? Care more of function over form? Well, then this dropdown gallery is for you!",
     "metadata": "templates/basic_gallery/metadata.json",
     "author": "degenerate bird",
-    "homepage": "https://carrion.chat/character/degenerate%20bird"
+    "homepage": "https://carrion.chat/character/degenerate%20bird",
+    "categories":["snippet","images","gallery"]
   },
   {
     "name": "Grid gallery",
     "description": "Have a few same-size character images you want to display in a uniform grid? Then this gallery is made for you.",
     "metadata": "templates/grid-gallery/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["snippet","images","gallery"]
   },
   {
     "name": "Simple character card",
     "description": "Do you want something to represent an individual? Useful for hubs and the like.",
     "metadata": "templates/character-card/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["snippet"]
   },
   {
     "name": "Detailed character card",
     "description": "Do you want something to represent an individual? Useful for relationship representation and the like.",
     "metadata": "templates/detailed-character-card/metadata.json",
     "author": "Mony",
-    "homepage": "https://carrion.chat/character/Mony/"
+    "homepage": "https://carrion.chat/character/Mony/",
+    "categories":["snippet"]
   },
   {
     "name": "Roleplay samples",
     "description": "Want to show off your writing chops to people? Use this nested dropdown",
     "metadata": "templates/writing-samples/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["snippet"]
   },
   {
     "name": "Zine ad template",
     "description": "Is your character a callback to the 80s-00s and a consumer product that would have been advertised in tech zines? Then this profile layout is for you!",
     "metadata": "templates/zine-ad/metadata.json",
     "author": "degenerate bird",
-    "homepage": "https://carrion.chat/character/degenerate%20bird"
+    "homepage": "https://carrion.chat/character/degenerate%20bird",
+    "categories":["layout"]
   },
   {
     "name": "Wikia template",
     "description": "Do you have what feels like an entire wiki worth of info? Well, here's a wiki template for you! (or at least the right side...)",
     "metadata": "templates/wiki/metadata.json",
     "author": "degenerate bird",
-    "homepage": "https://carrion.chat/character/Lava%20Loaf"
+    "homepage": "https://carrion.chat/character/Lava%20Loaf",
+    "categories":["layout"]
   },
   {
     "name": "\"What do you get\" template",
     "description": "Do you want to tease your characer's viewer with a small paragraph, followed by a semi-impressive inline that stands above a dropdown of more text? Then this layout is for you!",
     "metadata": "templates/pretentious-layout/metadata.json",
     "author": "degenerate bird",
-    "homepage": "https://carrion.chat/character/degenerate%20bird"
+    "homepage": "https://carrion.chat/character/degenerate%20bird",
+    "categories":["layout"]
   },
   {
     "name": "Cinema profile layout",
     "description": "As opposed to most snippets here, this is almost a full profile for you to use!",
     "metadata": "templates/cinema-profile/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["layout"]
   },
   {
     "name": "Fullbody sidebar profile layout",
     "description": "As opposed to most snippets here, this is almost a full profile for you to use!",
     "metadata": "templates/fullbody-sidebar-profile/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["layout"]
   },
   {
     "name": "Comic Sans layout",
     "description": "If you have a cutesy muffin you want to ERP getting brutally slamfucked - this might be your best bet",
     "metadata": "templates/comic-sans-profile/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["layout"]
   },
   {
     "name": "Earthbound Textbox",
     "description": "A dialogue box, compatible with being sent in chat, stylized to resemble one from earthbound.",
     "metadata": "templates/earthbound_textbox/metadata.json",
     "author": "Simon Blackquill",
-    "homepage": "https://carrion.chat/character/Simon Blackquill"
+    "homepage": "https://carrion.chat/character/Simon Blackquill",
+    "categories":["snippet","chat"]
   },
   {
     "name": "Pokemon Trainer Card",
     "description": "Show off your collection of pokemon on your profile!",
     "metadata": "templates/pokemon_trainer/metadata.json",
     "author": "Simon Blackquill",
-    "homepage": "https://carrion.chat/character/Simon Blackquill"
+    "homepage": "https://carrion.chat/character/Simon Blackquill",
+    "categories":["snippet","chat"]
   }
 ]
