@@ -67,3 +67,4 @@ article p {
  * as it populates with the templates defined within the manifest
  */
 #cat-default:checked ~ #template-list-container .cat-default { display:flex }
+#cat-default:checked ~ #template-tab-control .cat-default { background-color: var(--color-surface) }

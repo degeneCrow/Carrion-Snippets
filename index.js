@@ -214,6 +214,7 @@ function findCreateTemplateCategoryTab(container, category, style) {
     // have the tab become clickable proper
     style.textContent = style.textContent
       + `#${classname}:checked ~ #template-list-container .${classname} {display:flex}`
+      + `#${classname}:checked ~ #template-tab-control .${classname} {background-color:var(--color-surface)}`
   }
   return tabContainer
 }
