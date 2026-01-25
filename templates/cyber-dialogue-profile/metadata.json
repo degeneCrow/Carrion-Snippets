@@ -17,12 +17,16 @@
       "value": "#c94f7c"
     },
 
+    "color.text":{
+      "type": "color",
+      "label": "Text color fallback",
+      "value": "#fff"
+    },
     "color.a":{
       "type": "color",
       "label": "Text color no.1",
       "value": "#c94f7c"
     },
-
     "color.b":{
       "type": "color",
       "label": "Text color no.2",
