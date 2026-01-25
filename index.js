@@ -184,6 +184,7 @@ document.addEventListener("DOMContentLoaded", async function() {
       tabContainer.appendChild(tempDiv.firstChild)
     }
   }
+  
 })
 
 function findCreateTemplateCategoryTab(container, category) {
@@ -193,8 +194,21 @@ function findCreateTemplateCategoryTab(container, category) {
     tabContainer = document.createElement('div')
     tabContainer.className = `tab cat-${category}`
     container.querySelector('#template-list-container').appendChild(tabContainer)
-    // don't forget the inputs & tab labels
-    
+    // don't forget the inputs 
+    let classname = `cat-${category}`
+    tabRadio = document.createElement('input')
+    tabRadio.type = 'radio'
+    tabRadio.name = 'tab-control'
+    tabRadio.id   = classname
+    container.insertBefore(tabRadio, container.firstChild)
+    // also create the clickable tab element
+    tabLi = document.createElement('li')
+    tabLi.className = classname
+    tabLabel = document.createElement('label')
+    tabLabel.setAttribute('for', classname)
+    tabLabel.textContent = category.charAt(0).toUpperCase() + category.slice(1)
+    tabLi.appendChild(tabLabel);
+    container.querySelector('#template-tab-control>ul').appendChild(tabLi)
   }
   return tabContainer
 }
