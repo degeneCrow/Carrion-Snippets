@@ -105,6 +105,13 @@
     "homepage": "https://carrion.chat/character/Spierce"
   },
   {
+    "name": "Cyber dialogue layout",
+    "description": "If you like cyberpunk themes, as well as write 2 other characters talking about yours - use this layout",
+    "metadata": "templates/cyber-dialogue-profile/metadata.json",
+    "author": "Spierce",
+    "homepage": "https://carrion.chat/character/Spierce"
+  },
+  {
     "name": "Comic Sans layout",
     "description": "If you have a cutesy muffin you want to ERP getting brutally slamfucked - this might be your best bet",
     "metadata": "templates/comic-sans-profile/metadata.json",

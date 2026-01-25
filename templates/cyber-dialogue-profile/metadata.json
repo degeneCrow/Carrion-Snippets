@@ -1,0 +1,144 @@
+{
+  "template": "templates/cyber-dialogue-profile/layout-src.hbs",
+  "options": {
+    "color.bg.light":{
+      "type": "color",
+      "label": "Main background (light)",
+      "value": "#2d1a24"
+    },
+    "color.bg.dark":{
+      "type": "color",
+      "label": "Main background (dark)",
+      "value": "#0d0509"
+    },
+    "color.accent":{
+      "type": "color",
+      "label": "Accent color (outline)",
+      "value": "#c94f7c"
+    },
+
+    "color.a":{
+      "type": "color",
+      "label": "Text color no.1",
+      "value": "#c94f7c"
+    },
+
+    "color.b":{
+      "type": "color",
+      "label": "Text color no.2",
+      "value": "#b8e6d4"
+    },
+
+    "header.title": {
+      "type": "text",
+      "label": "Character title",
+      "value": "example character"
+    },
+    "header.name": {
+      "type": "text",
+      "label": "Character name",
+      "value": "CHARACTERUS EXAMPLUS"
+    },
+    "header.info": {
+      "type":"list",
+      "label":"Characteristics",
+      "template":{
+        "text": {
+          "type": "text",
+          "label": ""
+        }
+      },
+      "items":[
+        {
+          "text":"age"
+        },
+        {
+          "text":"gender"
+        },
+        {
+          "text":"orientation"
+        }
+      ]
+    },
+
+    "tags": {
+      "type":"list",
+      "label":"Character tags",
+      "template":{
+        "text": {
+          "type": "text",
+          "label": ""
+        }
+      },
+      "items":[
+        {
+          "text":"TAG 1"
+        },
+        {
+          "text":"TAG 2"
+        },
+        {
+          "text":"TAG 3"
+        }
+      ]
+    },
+
+    "dialogue": {
+      "type":"list",
+      "label":"Dialogue",
+      "template":{
+        "speaker": {
+          "type": "text",
+          "label": "Speaker"
+        },
+        "col": {
+          "type": "select",
+          "label": "Color",
+	  "options":[
+            {"label":"color 1","value":"a"},
+            {"label":"color 2","value":"b"}
+          ]
+        },
+        "msg": {
+          "type": "textarea",
+          "label": "Dialogue"
+        }
+      },
+      "items":[
+        {
+          "speaker":"SPEAKER A",
+          "msg":"\"Quote or statement from perspective A.\""
+	},
+        {
+          "speaker":"SPEAKER b",
+          "msg":"\"Quote or statement from perspective b.\""
+	},
+        {
+          "speaker":"SPEAKER A",
+          "msg":"\"Another quote from A.\""
+	},
+        {
+          "speaker":"SPEAKER B",
+          "msg":"\"Another quote from B.\""
+	}
+      ]
+    },
+
+    "bio":{
+      "type":"textarea",
+      "label":"Character bio",
+      "value":"First bio paragraph. Introduce the character—who they are, what defines them.\n\nSecond bio paragraph. Go deeper—personality, motivations, themes.\n\nOr do a summary of the dialogue above, if you'd rather like that."
+    },
+
+    "footer.line": {
+      "type": "text",
+      "label": "Footer quote",
+      "value": "MOTTO OR CLOSING LINE"
+    },
+    "footer.credit": {
+      "type": "text",
+      "label": "Footer Credit",
+      "value": "translation or subtext"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<link rel="stylesheet" src="https://raw.githubusercontent.com/elad2412/the-new-css-reset/main/css/reset.css">
+<style>
+#cyber-dialogue{
+  --bg1:  {{color.bg.light}};
+  --bg2:  {{color.bg.dark}};
+  --colac:{{color.accent}};
+  --cola: {{color.a}};
+  --colb: {{color.b}};
+  --border:3px solid var(--colac);
+  --sorder:2px solid #3d2a34;
+  width:750px;margin: 0 auto;
+  font-size:16px;
+  font-family:courier new,monospace;
+  background: var(--bg1);
+  border:var(--border);
+}
+#cyber-dialogue>*{padding:1.25em}
+#cyber-dialogue .header{
+  text-align:center;
+  border-bottom:var(--border)
+}
+#cyber-dialogue .header h3{
+  font-size:0.75em;letter-spacing:6px;
+  color:var(--cola)
+}
+#cyber-dialogue .header h2{
+  font-size:2em;letter-spacing:6px;
+  color:var(--colb)
+}
+#cyber-dialogue .header .meta>*{
+  display:inline;
+  font-size:0.75em;padding:0 1.5em;
+  border-right:1px solid var(--colb);
+}
+#cyber-dialogue .header .meta>*:last-child{border:0}
+#cyber-dialogue .tags{
+  display:flex;justify-content:center;gap:0.5em;
+  border-bottom:var(--sorder)
+}
+#cyber-dialogue .tags>*{
+  font-size:0.75em;padding:0.5em 1em;
+  border:1px solid var(--colac);
+}
+#cyber-dialogue .dialogue{
+  display:flex;flex-direction:column;gap:1em;
+  background:var(--bg2);
+}
+#cyber-dialogue .dialogue .msg.a{--colmsg:var(--cola);text-align:left}
+#cyber-dialogue .dialogue .msg.a>p{border-left:3px solid var(--colmsg)}
+#cyber-dialogue .dialogue .msg.b{--colmsg:var(--colb);text-align:right}
+#cyber-dialogue .dialogue .msg.b>p{border-right:3px solid var(--colmsg)}
+#cyber-dialogue .dialogue .msg{color:var(--colmsg)}
+#cyber-dialogue .dialogue .msg>p{
+  padding:1em;
+  background:color-mix(in srgb, var(--colmsg), var(--bg2) 85%)
+}
+#cyber-dialogue .bio{
+  background:var(--bg2);
+  text-align:justify;
+  border-top:var(--sorder);border-bottom:var(--sorder)
+}
+#cyber-dialogue .footer{
+  text-align:center;
+  border-top:var(--border)
+}
+#cyber-dialogue .footer{letter-spacing:2px}
+#cyber-dialogue .footer>.quote{font-size:0.85em;color:var(--colb)}
+#cyber-dialogue .footer>.credit{font-size:0.65em;color:var(--cola)}
+</style>
+
+
+
+
+
+<div id="cyber-dialogue">
+
+<div class="header">
+  <h3>{{header.title}}</h3>
+  <h2>{{header.name}}</h2>
+  <div class="meta">
+  {{#each header.info}}<span>{{text}}</span>{{/each}}
+  </div>
+</div>
+
+<div class="tags">
+  {{#each tags}}<span>{{text}}</span>{{/each}}
+</div>
+
+<div class="dialogue">{{#each dialogue}}
+  <div class="msg {{col}}">
+    <span>{{speaker}}</span>
+    <p>{{msg}}</p>
+  </div>
+{{/each}}</div>
+
+<div class="bio">
+
+{{bio}}
+</div>
+
+<div class="footer">
+  <div class="quote">{{footer.line}}</div>
+  <div class="credit">{{footer.credit}}</div>
+</div>
+
+</div>
+
