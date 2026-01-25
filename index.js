@@ -171,12 +171,33 @@ document.addEventListener("DOMContentLoaded", async function() {
     .addEventListener('submit', handleFormSubmit)
 
   const tempDiv = document.createElement('div')
+  const container = document.getElementById('template-control')
   for (const [index, item] of manifest.entries()) {
+    // we're creating the card with the template here
     tempDiv.innerHTML = cardTemplate({index, ...item})
     tempDiv.firstChild.onclick = (e) => { setActiveTemplate(index) }
-    document.getElementById('template-list-container').appendChild(tempDiv.firstChild)
+    // we're shoving the card within ALL of its appropriate categories here
+    let template_categories = item.categories ?? ['default']
+    for (const category of template_categories) {
+      // first of course create the tab, if one does not exist
+      let tabContainer = findCreateTemplateCategoryTab(container, category)
+      tabContainer.appendChild(tempDiv.firstChild)
+    }
   }
 })
+
+function findCreateTemplateCategoryTab(container, category) {
+  let tabContainer = container.querySelector(`.tab.cat-${category}`)
+  if (! tabContainer) {
+    // have to make it
+    tabContainer = document.createElement('div')
+    tabContainer.className = `tab cat-${category}`
+    container.querySelector('#template-list-container').appendChild(tabContainer)
+    // don't forget the inputs & tab labels
+    
+  }
+  return tabContainer
+}
 
 // Add click events to UI buttons
 document.getElementById('copy-html-button')

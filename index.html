@@ -90,7 +90,17 @@
 </div>
 
 <div id="template-control">
-  <div id="template-list-container"></div>
+  <!-- TAB INPUTS -->
+  <input type="radio" name="tab-control" id="cat-default" checked>
+  <!-- TABS THEMSELVES -->
+  <nav id="template-tab-control"><ul>
+    <li class="cat-default"><label for="cat-default">Default</label></li>
+  </ul></nav>
+  <!-- TAB CONTENTS -->
+  <section id="template-list-container">
+    <div class="tab cat-default">
+    </div>
+  </section>
 
   <form id="editor-form" class="container">
     <ul id="editor-container"></ul>
