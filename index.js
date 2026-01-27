@@ -82,6 +82,27 @@ function buildTemplateConfigurator(options, targetNode, idPrefix = "") {
           name: `${idPrefix}.${optionID}`
         })) 
         break
+      // I want this only for the dialogue tree classes;
+      // doubt anyone else will be using this - Crow
+      case 'select':
+        const select = document.createElement('select')
+        select.name = `${idPrefix}.${optionID}`
+
+        for (const opt of parameters.options ?? []) {
+          select.appendChild(Object.assign(document.createElement('option'), {
+            value: opt.value ?? opt,
+            textContent: opt.label ?? opt,
+            // no clue how tf to actually read the default in,
+            // without copy-pasting the entire template EVERY SINGLE TIME
+            // if you figure it out - full credit to you
+            // - Crow
+            //selected: opt.value === parameters.value || opt === parameters.value
+          }))
+        }
+
+        container.appendChild(select)
+        break
+
       default: 
         container.appendChild(Object.assign(document.createElement('input'), {
           ...parameters,

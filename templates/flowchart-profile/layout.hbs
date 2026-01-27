@@ -1,0 +1,166 @@
+<style>
+#flowchart-layout{
+  width:750px;box-sizing:border-box;margin:0 auto;
+  font-family: 'Courier New', monospace;
+  font-size:16px;
+
+  --bg1:{{bg.color1}};
+  --bg2:{{bg.color2}};
+  --colm:{{color.text}};
+  --cols:{{color.subdued}};
+  --cola:{{color.accent}};
+
+  background: var(--bg1);
+  border: 4px solid var(--cola); 
+  color:var(--colm)
+}
+
+#flowchart-layout p,
+#flowchart-layout h2{margin:0;padding:0}
+
+#flowchart-layout .subdued{color:var(--cols) }
+
+#flowchart-layout .header{
+  font-size:12px;
+  display:flex;flex-direction:column;align-items:center;
+  gap:1em;padding:2em 0;
+}
+#flowchart-layout .header>.title{letter-spacing:0.5em}
+#flowchart-layout .header>h2{
+  color:var(--cola);
+  font-size:2.5em;letter-spacing:0.2em;
+}
+#flowchart-layout .header>em{letter-spacing:0.025em}
+
+#flowchart-layout .info{
+  background:var(--bg2);
+  display:flex;justify-content:center;
+  padding:0.5em 0;
+  line-height:1;letter-spacing:2px
+}
+#flowchart-layout .info>*{
+  padding:0 2em;
+  border-right:1px solid var(--colm)
+}
+#flowchart-layout .info>*:last-child{border-right:0}
+
+#flowchart-layout .bio{
+  padding:1em 2em;
+  text-align:justify;
+}
+#flowchart-layout .bio p{margin: 0 0 1em 0}
+
+#flowchart-layout .section{
+  background-color:rgba(from var(--cola) r g b / 0.3);
+  padding:1em 2em;
+  border: 2px solid #2a2a2a;
+}
+#flowchart-layout .section h4{
+  margin:0;
+  font-size:1rem;font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+#flowchart-layout .section p{
+  color:#aaa;margin:1em 0 0 0;
+  text-align:justify;
+}
+
+#flowchart-layout .footer{text-align:center;padding:1em}
+#flowchart-layout .footer .m{
+  letter-spacing:4px;color:var(--cola);
+}
+#flowchart-layout .footer .s{
+  font-size:0.8em;color:var(--cols)
+}
+</style>
+
+
+
+
+<div id="flowchart-layout">
+
+<!-- header -->
+<div class="header">
+  <div class="title subdued">{{header.title}}</div>
+  <h2>{{header.name}}</h2>
+  <em>{{header.quote}}</em>
+</div>
+
+<!-- basic info bar -->
+<div class="info">
+{{#each info}}
+  <p>{{text}}</p>
+{{/each}}</div>
+
+
+
+
+
+<!-- horizontal flowchart section -->
+<style>
+#flowchart-layout .chart{
+  display:flex;flex-wrap:nowrap;
+  align-items:center;justify-content:center;gap:8px;
+  font-size:14px;
+  padding:10px;
+  border-bottom:2px solid #333;
+}
+
+#flowchart-layout .chart .box{
+  border:1px solid var(--cols);
+  padding:0.5em 0.75em;
+  letter-spacing:1px;text-align:center
+}
+#flowchart-layout .chart>.box.b1,
+#flowchart-layout .chart>.box.b4{
+  color:var(--cola);border-color:var(--cola)
+}
+#flowchart-layout .chart>.box.b2{
+  background-color:rgba(from var(--cola) r g b / 0.3);
+}
+#flowchart-layout .chart>.b3{
+  display:flex;flex-direction:column;
+  gap: 4px
+}
+#flowchart-layout .chart>.b3>.box{
+  color:var(--cols)
+}
+</style>
+<div class="chart">
+<div class="box b1">{{chart.start}}</div>
+<div style="color: #444; font-size: 30px;">→</div>
+<div class="box b2">{{chart.cont}}</div>
+<div style="color: #444; font-size: 30px;">→</div>
+<div class="b3">{{#each chart.choice}}
+  <div class="box">{{choice}}</div>
+{{/each}}</div>
+<div style="color: #444; font-size: 30px;">→</div>
+<div class="box b4">{{chart.end}}</div>
+</div>
+
+
+
+
+
+<!-- main bio section -->
+<div class="bio">
+
+{{content}}
+</div>
+
+<!-- secondary info section -->
+<div>{{#each sections}}
+<div class="section"><h4>{{title}}</h4>
+
+{{content}}
+</div>
+{{/each}}</div>
+
+<div class="footer">
+  <p class="m">{{footer.line}}</p>
+  <p class="s">{{footer.credit}}</p>
+</div>
+
+</div>
+
