@@ -192,12 +192,53 @@ document.addEventListener("DOMContentLoaded", async function() {
     .addEventListener('submit', handleFormSubmit)
 
   const tempDiv = document.createElement('div')
+  const container = document.getElementById('template-control')
+  const stylesheet = document.createElement('style')
   for (const [index, item] of manifest.entries()) {
-    tempDiv.innerHTML = cardTemplate({index, ...item})
-    tempDiv.firstChild.onclick = (e) => { setActiveTemplate(index) }
-    document.getElementById('template-list-container').appendChild(tempDiv.firstChild)
+    // we're shoving the card within ALL of its appropriate categories here
+    let template_categories = item.categories ?? ['default']
+    for (const category of template_categories) {
+      // we're creating the card with the template here
+      tempDiv.innerHTML = cardTemplate({index, ...item})
+      tempDiv.firstChild.onclick = (e) => { setActiveTemplate(index) }
+      // of course also create the tab, if one does not exist
+      let tabContainer = findCreateTemplateCategoryTab(container, category, stylesheet)
+      tabContainer.appendChild(tempDiv.firstChild)
+    }
   }
+  // add the stylesheet in dom
+  container.insertBefore(stylesheet, container.firstChild)
 })
+
+function findCreateTemplateCategoryTab(container, category, style) {
+  let tabContainer = container.querySelector(`.tab.cat-${category}`)
+  if (! tabContainer) {
+    // have to make it
+    tabContainer = document.createElement('div')
+    tabContainer.className = `tab cat-${category}`
+    container.querySelector('#template-list-container').appendChild(tabContainer)
+    // don't forget the inputs 
+    let classname = `cat-${category}`
+    let tabRadio = document.createElement('input')
+    tabRadio.type = 'radio'
+    tabRadio.name = 'tab-control'
+    tabRadio.id   = classname
+    container.insertBefore(tabRadio, container.firstChild)
+    // also create the clickable tab element
+    let tabLi = document.createElement('li')
+    tabLi.className = classname
+    let tabLabel = document.createElement('label')
+    tabLabel.setAttribute('for', classname)
+    tabLabel.textContent = category.charAt(0).toUpperCase() + category.slice(1)
+    tabLi.appendChild(tabLabel);
+    container.querySelector('#template-tab-control>ul').appendChild(tabLi)
+    // have the tab become clickable proper
+    style.textContent = style.textContent
+      + `#${classname}:checked ~ #template-list-container .${classname} {display:flex}`
+      + `#${classname}:checked ~ #template-tab-control .${classname} {background-color:var(--color-surface)}`
+  }
+  return tabContainer
+}
 
 // Add click events to UI buttons
 document.getElementById('copy-html-button')
