@@ -1,10 +1,10 @@
 <style>
 #main {
+  --theme:{{theme-color}};
+
   display:flex;flex-direction:row-reverse;
   gap: 2rem;
   width: 100%;
-
-  --theme:{{theme-color}};
 }
 
 #main .col {
@@ -27,31 +27,48 @@
   border-color:var(--theme)
 }
 #main .classcard td {width:100%}
+
+/* "sources" dropdown */
+details>summary {color:var(--theme)}
+details>summary:hover { color:color-mix(in srgb, var(--theme) 45%, white);}
+details hr{border-color:var(--color-bg)}
+
+details>details { background-color:color-mix(in srgb, #252525 90%, white); }
+
+details>details>details,
+details>details>details[open]>summary {border-bottom:1px solid black}
+details>details>details[open]{border:1px solid black;border-top:0}
 </style>
 
 <div id="main">
 <div style="max-width:400px" class="col">
+  <blockquote>{{quote}}</blockquote>
+  <img src="{{image}}" />
 
-<blockquote>{{{quote}}}</blockquote>
-
-<img src="{{image}}" />
-
-<table class="classcard"><tbody>
-
-{{#each attributes}}
-<tr>
-  <th>{{{label}}}</th>
-  <td>{{{value}}}</td>
-</tr>
-{{/each}}
-
-</tbody></table>
-
+  <table class="classcard"><tbody>
+    {{#each attributes}}
+    <tr>
+      <th>{{label}}</th>
+      <td>{{{value}}}</td>
+    </tr>
+    {{/each}}
+  </tbody></table>
 </div><!-- .col END -->
 
 <div class="col">
 
 {{{content}}}
+
+<details open><summary>Sources...</summary>
+
+{{#each sources}}
+<details><summary>{{title}}</summary>
+
+{{{content}}}
+</details>
+{{/each}}
+
+</details><!-- sources details END -->
 
 </div><!-- .col END -->
 </div><!-- #main END -->
