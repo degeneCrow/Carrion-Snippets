@@ -108,21 +108,24 @@
     "description": "Are you a minimalist at heart? Or do you want to focus a visitor's attention to one place? Then use this simple box.",
     "metadata": "templates/concise-box-profile/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["layout"]
   },
   {
     "name": "Flowchart layout",
     "description": "If all relationships with your character follow a predictable path: - this layout might be your best bet",
     "metadata": "templates/flowchart-profile/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["layout"]
   },
   {
     "name": "Cyber dialogue layout",
     "description": "If you like cyberpunk themes, as well as write 2 other characters talking about yours - use this layout",
     "metadata": "templates/cyber-dialogue-profile/metadata.json",
     "author": "Spierce",
-    "homepage": "https://carrion.chat/character/Spierce"
+    "homepage": "https://carrion.chat/character/Spierce",
+    "categories":["layout"]
   },
   {
     "name": "Comic Sans layout",
