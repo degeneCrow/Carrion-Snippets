@@ -14,11 +14,10 @@
 }
 #pretentious .comp p{text-align:center;margin:0}
 
-#pretentious~details>summary{text-align:center}
+#pretentious>details>summary{text-align:center}
 </style>
 
 <div id="pretentious">
-
 <div class="query">
 
 {{{query}}}
@@ -27,12 +26,16 @@
   <li>{{text}}</li>
 {{/each}}</ul>
 
-<div class="comp">{{{complication}}}</div>
+<div class="comp">
+
+{{{complication}}}
 </div>
+</div><!-- .query END -->
 
 <img src="{{image}}" />
-</div>
+
 <details><summary>{{dropdown_title}}</summary>
 
 {{{dropdown_content}}}
 </details>
+</div><!-- #pretentious END -->
