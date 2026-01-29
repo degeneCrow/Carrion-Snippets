@@ -1,34 +1,38 @@
 <style>
 #main {
   --theme:{{theme-color}};
-
-  display:flex;flex-direction:row-reverse;
-  gap: 2rem;
-  width: 100%;
 }
-
-#main .col {
-  display:flex;flex:1;
-  flex-direction:column;
-}
-#main .col img {
-  object-fit:contain;
-  height:100%;max-height:400px
-}
-
 #main p {
   text-align:justify;
   text-indent:1.5rem;
 }
 
-#main blockquote {
+.wikiblock{
+  display:flex;flex:1;
+  flex-direction:column;
+  max-width:400px
+}
+.wikiblock.right {
+  float:right;
+  margin:0 0 2em 2em
+}
+.wikiblock.left {
+  float:left;
+  margin:0 2em 2em 0
+}
+.wikiblock blockquote {
   text-align:center;
   font-size:1.2rem;font-weight:bold;
   border-color:var(--theme)
 }
-#main .classcard td {width:100%}
+.wikiblock img {
+  object-fit:contain;
+  height:100%;max-height:400px
+}
+.wikiblock td {width:100%}
 
 /* "sources" dropdown */
+.sources{display:inline-block;width:100%}
 details>summary {color:var(--theme)}
 details>summary:hover { color:color-mix(in srgb, var(--theme) 45%, white);}
 details hr{border-color:var(--color-bg)}
@@ -41,11 +45,11 @@ details>details>details[open]{border:1px solid black;border-top:0}
 </style>
 
 <div id="main">
-<div style="max-width:400px" class="col">
+<div class="wikiblock right">
   <blockquote>{{quote}}</blockquote>
-  <img src="{{image}}" />
+  <img src="{{image}}"/>
 
-  <table class="classcard"><tbody>
+  <table><tbody>
     {{#each attributes}}
     <tr>
       <th>{{label}}</th>
@@ -53,13 +57,13 @@ details>details>details[open]{border:1px solid black;border-top:0}
     </tr>
     {{/each}}
   </tbody></table>
-</div><!-- .col END -->
+</div><!-- .wikiblock.right END -->
 
-<div class="col">
+<div>
 
 {{{content}}}
 
-<details open><summary>Sources...</summary>
+<details open class=sources><summary>Sources...</summary>
 
 {{#each sources}}
 <details><summary>{{title}}</summary>
@@ -70,6 +74,6 @@ details>details>details[open]{border:1px solid black;border-top:0}
 
 </details><!-- sources details END -->
 
-</div><!-- .col END -->
+</div><!-- main content END -->
 </div><!-- #main END -->
 
