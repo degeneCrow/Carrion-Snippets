@@ -32,7 +32,7 @@ details.bgal>.images img {
 {{#each images}}
 {{#if href}}
 <a href="{{href}}">
-  <img src="{{href}}" title="{{alt}}">
+  <img src="{{href}}" {{#if alt}}title="{{alt}}"{{/if}}>
 </a>
 {{/if}}
 {{/each}}
