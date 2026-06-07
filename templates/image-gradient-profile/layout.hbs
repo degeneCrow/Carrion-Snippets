@@ -1,0 +1,66 @@
+<style>
+.juck-gp {
+  margin:auto;
+  position: relative;
+  width: 700px;
+  min-height: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 200px;
+}
+.juck-gp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:{{{gradient}}}; 
+  z-index: 1;
+}
+.juck-gp-sprite{
+  position:absolute;z-index:3;
+  min-width: 220px;
+  height: calc(100% + 25%);
+  left: {{{sprite-align-x}}};
+  bottom:{{{sprite-align-y}}};transform:translateY({{{sprite-align-y}}});
+}
+
+.juck-gp-content {
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+  padding: 20px;
+  gap: 14px;
+}
+.juck-gp-head {
+  background: {{{bg-header}}};
+  border: 2px solid {{{color-header}}};
+  padding: 10px 16px;
+  color:{{{color-header}}};
+  text-align:center;
+}
+
+.juck-gp-title {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 36px;
+  font-variant: small-caps;
+  line-height: 1;
+}
+.juck-gp-subtitle {
+  font-size: 14px;
+}
+
+.juck-gp p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: {{{color-txt}}};
+ }
+</style>
+
+<div class="juck-gp">
+<img class="juck-gp-sprite" src="{{{sprite}}}">
+<div class="juck-gp-content">
+<div class="juck-gp-head">
+  <div class="juck-gp-title">{{{title}}}</div>
+  <div class="juck-gp-subtitle">{{{subtitle}}}</div>
+</div>
+
+{{{bio}}}
+</div></div>

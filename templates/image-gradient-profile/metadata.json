@@ -1,0 +1,57 @@
+{
+  "template":"templates/image-gradient-profile/layout.hbs",
+  "options":{
+    "bg-header": {
+      "type": "color",
+      "label": "Header container color",
+      "value": "#4682b4"
+    },
+    "color-header": {
+      "type": "color",
+      "label": "Header text color",
+      "value": "#fff"
+    },
+    "color-txt": {
+      "type": "color",
+      "label": "Text color",
+      "value": "#222"
+    },
+    "gradient": {
+      "type": "text",
+      "label": "Background gradient. BE CAREFUL WITH THIS",
+      "value": "linear-gradient(to right,transparent 15%,aliceblue 50%,lightblue 100%)"
+    },
+
+    "sprite": {
+      "type": "text",
+      "label": "Character sprite",
+      "value": "https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/Wikipe-tan.png"
+    },
+    "sprite-align-x":{
+      "type":"text",
+      "label": "Horizontal character sprite height offset", 
+      "value":"-10%"
+    },
+    "sprite-align-y":{
+      "type":"text",
+      "label": "Vertical character sprite height offset (keep as percentage)",
+      "value":"50%"
+    },
+
+    "title": {
+      "type": "text",
+      "label": "Character name",
+      "value": "Wikipe-tan"
+    },
+    "subtitle": {
+      "type": "text",
+      "label": "Character subtitle",
+      "value": "The cutest dictionary you've never seen"
+    },
+    "bio": {
+      "type": "textarea",
+      "label": "Biography",
+      "value": "Wikipe-tan (Japanese: ウィキペたん) is a personification of Wikipedia created in January 2006 by Japanese editor Kasuga. She is an unofficial mascot of Wikipedia and is used at several WikiProjects. The -tan in \"Wikipe-tan\" is an affectionate suffix, in the form of a Japanese honorific. Like the OS-tans, she is a product of moe anthropomorphism. Wikipe-tan is the mascot character for WikiProject Anime and manga and WikiProject Holidays' Christmas task force; she was also the mascot for Admin coaching, the Counter-Vandalism Unit, and a contender for an official Wikipedia mascot. In addition, Wikimedia Hong Kong uses Wikipe-tan images and her cosplay during functions and promotions. Wikipe-tan has occasionally been treated as a mascot for Wikipedia or its community in news reports."
+    }
+  }
+}

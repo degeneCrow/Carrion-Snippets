@@ -171,5 +171,13 @@
     "author": "juckport",
     "homepage": "https://carrion.chat/character/juckport",
     "categories":["layout"]
+  },
+  {
+    "name": "Image & gradient profile",
+    "description": "Want a somewhat 2008 vibe with your character? This won't be exactly that, but it might get your close.",
+    "metadata": "templates/image-gradient-profile/metadata.json",
+    "author": "juckport",
+    "homepage": "https://carrion.chat/character/juckport",
+    "categories":["layout"]
   }
 ]
