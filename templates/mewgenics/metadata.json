@@ -1,0 +1,38 @@
+{
+  "template":"templates/mewgenics/layout.hbs",
+  "options":{
+
+    "sprite": {
+      "type": "text",
+      "label": "Character sprite",
+      "value": "https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Guillotina_Intro_Art.png"
+    },
+    "sprite-align-y":{
+      "type":"text",
+      "label": "Vertical character sprite height offset (keep as percentage)",
+      "value":"50%"
+    },
+
+    "badge":{
+      "type":"text",
+      "label":"Badge",
+      "value":"https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Collarless_Icon.png"
+    },
+    "title": {
+      "type": "text",
+      "label": "Character name",
+      "value": "Cat Cattington the C-th ♂︎"
+    },
+    "bio": {
+      "type": "textarea",
+      "label": "Bio",
+      "value": "write however much text you want here; the background will stretch to accomodate.\n\nalso, edit the stat card yourself in HTML; making it editable here would make the form a bloody nightmare"
+    },
+
+    "tape-label": {
+      "type": "text",
+      "label": "Character level",
+      "value": "Lvl. 1"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+<style>
+.mewcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Comic Sans MS', Arial, sans-serif;
+  font-weight: bold;
+  color: #1a1a1a;
+  width:100%;max-width:700px;margin:auto;
+}
+.mewcard-nameplate {
+  position: relative;
+  display:flex;align-items:center;
+  padding: 10px 20px;
+  min-width: 250px;
+  background: #cfcfcf;
+  border: solid #606060;
+  border-width: 3px 2px; 
+  border-radius: 3px 5px;
+  font-size: 26px;
+  line-height:1;
+}
+.mewcard-nameplate>img{
+  position:absolute;
+  width:64px;object-fit:contain;
+  left:-55px;top:-80%;
+  transform: rotate(-15deg);
+  z-index: 2;
+}
+.mewcard-sprite { max-width: 80%; object-fit: contain; }
+.mewcard-bottom {
+  position: relative;
+  margin-top: -30px;
+  padding: 10px;
+  width: 100%;
+  border: 10px solid transparent;
+  border-image: url("https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/CSS_Infobox_Border_Image.png") 10 fill stretch;
+ }
+.mewcard-bottom::after {content: ''}
+.tape {
+  position:absolute;
+  top:-5px;left:30px;
+  display:flex;align-items:center;justify-content:center;
+  min-width:90px;height:42px;
+  background: url("https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/tape.png") center / 100% 100% no-repeat;
+  font-size: 20px;
+  transform: rotate(-1.5deg);
+}
+.stats-card {
+  float: left;
+  display: grid;
+  grid-template-columns: 24px 24px 18px 24px;
+  place-items: center;text-align:center;
+  padding: 22px 8px 10px;margin-right: 10px;
+  border: 10px solid transparent;
+  border-image: url("https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/CSS_Infobox_Border_Image_Square.png") 10 fill stretch;
+ }
+.stat-val {
+  font-size: 17px;
+  position: relative; z-index: 0;
+}
+.stat-val::before, .stat-val::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  z-index: -1;
+}
+.stat-val::before {
+  --red-pct: clamp(0%, calc((5 - var(--val)) * 20%), 100%);
+  background: color-mix(in srgb, #b83030 var(--red-pct), transparent);
+}
+.stat-val::after {
+  --green-pct: clamp(0%, calc((var(--val) - 5) * 20%), 100%);
+  background: color-mix(in srgb, #1e8a14 var(--green-pct), transparent);
+}
+.stat-base { color: #666; font-size: 13px }
+.stat-mod { font-size: 11px; color: #aaa }
+.text-box p { font-size: 16px; margin: 0.5em }
+</style>
+
+<div class="mewcard">
+<div class="mewcard-nameplate">
+  <img src="{{{badge}}}">
+  <span>{{{title}}}</span>
+</div>
+<img class=mewcard-sprite src="{{{sprite}}}">
+
+<div class="mewcard-bottom">
+  <div class="tape">{{{tape-label}}}</div>
+  <div class="stats-card">
+  <!-- stat block. make sure you make --val and the actual text match so low stats are red and high stats are green... or make them all --val:5 so the backgrounds dont show up at all. stat-base is for the stat with no modifier, stat-mod is the modifier, stat-val is those numbers added together -->
+    <img src="https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Stat_Strength.png">
+    <div class="stat-val" style="--val:7">7</div>
+    <div class="stat-base">7</div>
+    <div class="stat-mod">+0</div>
+
+    <img src="https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Stat_Dexterity.png">
+    <div class="stat-val" style="--val:10">10</div>
+    <div class="stat-base">5</div>
+    <div class="stat-mod">+5</div>
+
+    <img src="https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Stat_Constitution.png">
+    <div class="stat-val" style="--val:4">4</div>
+    <div class="stat-base">5</div>
+    <div class="stat-mod">-1</div>
+
+    <img src="https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Stat_Intelligence.png">
+    <div class="stat-val" style="--val:1">1</div>
+    <div class="stat-base">7</div>
+    <div class="stat-mod">-7</div>
+
+    <img src="https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Stat_Speed.png">
+    <div class="stat-val" style="--val:6">6</div>
+    <div class="stat-base">7</div>
+    <div class="stat-mod">-1</div>
+
+    <img src="https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Stat_Charisma.png">
+    <div class="stat-val" style="--val:5">5</div>
+    <div class="stat-base">5</div>
+    <div class="stat-mod">+0</div>
+
+    <img src="https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/mewgenics/Stat_Luck.png">
+    <div class="stat-val" style="--val:3">3</div>
+    <div class="stat-base">5</div>
+    <div class="stat-mod">-2</div>
+  </div>
+<div class="text-box">
+
+{{{bio}}}
+</div>
+</div>

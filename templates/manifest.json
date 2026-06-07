@@ -179,5 +179,13 @@
     "author": "juckport",
     "homepage": "https://carrion.chat/character/juckport",
     "categories":["layout"]
+  },
+  {
+    "name": "Mewgenics profile",
+    "description": "...why would you ever want to use this?",
+    "metadata": "templates/mewgenics/metadata.json",
+    "author": "juckport",
+    "homepage": "https://carrion.chat/character/juckport",
+    "categories":["layout"]
   }
 ]
