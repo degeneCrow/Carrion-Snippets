@@ -163,5 +163,13 @@
     "author": "degenerate bird",
     "homepage": "https://carrion.chat/character/degenerate%20bird",
     "categories":["snippet"]
+  },
+  {
+    "name": "Trollian profile card",
+    "description": "Is your character from the Homestuck universe? Do you want to identify them as such with an ID card?",
+    "metadata": "templates/trollian-card/metadata.json",
+    "author": "juckport",
+    "homepage": "https://carrion.chat/character/juckport",
+    "categories":["layout"]
   }
 ]

@@ -1,0 +1,40 @@
+{
+  "template":"templates/trollian-card/layout.hbs",
+  "options":{
+    "color-card": {  
+      "type": "color", 
+      "label": "Card color (try picking something not too bright)",
+      "value": "#e00000"
+    },
+    "color-bg": {  
+      "type": "color", 
+      "label": "Inner content background color",
+      "value": "#4d4d4d"
+    },
+    "color-txt": {  
+      "type": "color",
+      "label": "Text (and accent) color",
+      "value": "#008282"
+    },
+    "race": {  
+      "type": "text", 
+      "label": "Character race",
+      "value": "Trollian"
+    },
+    "name": {  
+      "type": "text", 
+      "label": "Character username",
+      "value": "gallowsCalibrator"
+    },
+    "sprite": {
+      "type": "text", 
+      "label": "Character sprite",
+      "value": "https://file.garden/Y74Netox3QdC5lcD/archivefiles/carrion/tezy.png"
+    },
+    "textbox": {  
+      "type": "textarea", 
+      "label": "Biography",
+      "value": "Terezi Pyrope is a teal blooded troll and one of the Alternian trolls who created Earth's universe. She is one of the main characters in Homestuck. Her Trollian handle is gallowsCalibrator. Her sign is Libra, Sign of the Watcher, which has a Prospit sway and is bound to the Mind aspect. She was a member of the Red Team."
+    }
+  }
+}
